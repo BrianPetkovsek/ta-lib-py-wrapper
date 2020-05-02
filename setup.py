@@ -17,7 +17,7 @@ except:
     from distutils.extension import Extension
     requires = {"requires": ["numpy"]}
 
-lib_talib_name = 'ta_lib'  # the underlying C library's name
+lib_talib_name = 'ta_lib_rt'  # the underlying C library's name
 
 runtime_lib_dirs = []
 
@@ -51,8 +51,8 @@ for prefix in ['darwin', 'linux', 'bsd', 'sunos']:
 if sys.platform == "win32":
     platform_supported = True
     lib_talib_name = 'ta_libc_cdr'
-    include_dirs = [r"c:\ta-lib\c\include"]
-    lib_talib_dirs = [r"c:\ta-lib\c\lib"]
+    include_dirs = [r"c:\ta-lib-rt\c\include"]
+    lib_talib_dirs = [r"c:\ta-lib-rt\c\lib"]
 
 if not platform_supported:
     raise NotImplementedError(sys.platform)
@@ -76,7 +76,7 @@ for lib_talib_dir in lib_talib_dirs:
     except OSError:
         pass
 else:
-    warnings.warn('Cannot find ta-lib library, installation may fail.')
+    warnings.warn('Cannot find ta-lib-rt library, installation may fail.')
 
 cmdclass = {}
 if has_cython:
@@ -84,8 +84,8 @@ if has_cython:
 
 ext_modules = [
     Extension(
-        'talib._ta_lib',
-        ['talib/_ta_lib.pyx' if has_cython else 'talib/_ta_lib.c'],
+        'talibrt._ta_lib',
+        ['talibrt/_ta_lib.pyx' if has_cython else 'talibrt/_ta_lib.c'],
         include_dirs=include_dirs,
         library_dirs=lib_talib_dirs,
         libraries=[lib_talib_name],
@@ -94,13 +94,13 @@ ext_modules = [
 ]
 
 setup(
-    name = 'TA-Lib',
-    version = '0.4.18',
-    description = 'Python wrapper for TA-Lib',
+    name = 'TA-Lib-RT',
+    version = '0.7.0',
+    description = 'Python wrapper for TA-Lib-RT',
     author = 'John Benediktsson',
     author_email = 'mrjbq7@gmail.com',
-    url = 'http://github.com/mrjbq7/ta-lib',
-    download_url = 'https://github.com/mrjbq7/ta-lib/releases',
+    url = 'https://github.com/trufanov-nok/ta-lib-rt',
+    download_url = 'https://github.com/trufanov-nok/ta-lib-rt/releases',
     classifiers = [
         "License :: OSI Approved :: BSD License",
         "Development Status :: 4 - Beta",
@@ -122,7 +122,7 @@ setup(
         "Intended Audience :: Science/Research",
         "Intended Audience :: Financial and Insurance Industry",
     ],
-    packages = ['talib'],
+    packages = ['talibrt'],
     ext_modules = ext_modules,
     cmdclass = cmdclass,
     **requires

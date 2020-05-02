@@ -4,7 +4,7 @@ import os
 import re
 import sys
 
-from talib import abstract
+#from talibrt import abstract
 
 # FIXME: initialize once, then shutdown at the end, rather than each call?
 # FIXME: should we pass startIdx and endIdx into function?
@@ -13,23 +13,23 @@ from talib import abstract
 functions = []
 include_paths = ['/usr/include', '/usr/local/include', '/opt/include', '/opt/local/include']
 if sys.platform == 'win32':
-    include_paths = [r'c:\ta-lib\c\include']
+    include_paths = [r'c:\ta-lib-rt\c\include']
 header_found = False
 for path in include_paths:
-    ta_func_header = os.path.join(path, 'ta-lib', 'ta_func.h')
+    ta_func_header = os.path.join(path, 'ta-lib-rt', 'ta_func.h')
     if os.path.exists(ta_func_header):
         header_found = True
         break
 if not header_found:
-    print('Error: ta-lib/ta_func.h not found', file=sys.stderr)
+    print('Error: ta-lib-rt/ta_func.h not found', file=sys.stderr)
     sys.exit(1)
 with open(ta_func_header) as f:
     tmp = []
     for line in f:
         line = line.strip()
         if tmp or \
-            line.startswith('TA_RetCode TA_') or \
-            line.startswith('int TA_'):
+            line.startswith('TA_LIB_API TA_RetCode TA_') or \
+            line.startswith('TA_LIB_API int TA_'):
             line = re.sub('/\*[^\*]+\*/', '', line) # strip comments
             tmp.append(line)
             if not line:
@@ -39,19 +39,46 @@ with open(ta_func_header) as f:
                 tmp = []
 
 # strip "float" functions
-functions = [s for s in functions if not s.startswith('TA_RetCode TA_S_')]
+functions = [s for s in functions if not s.startswith('TA_LIB_API TA_RetCode TA_S_')]
 
 # strip non-indicators
 functions = [s for s in functions if not s.startswith('TA_RetCode TA_Set')]
 functions = [s for s in functions if not s.startswith('TA_RetCode TA_Restore')]
+functions = [s for s in functions if "_State("]
 
 # print headers
 print("""\
+from cpython.ref cimport PyObject
 cimport numpy as np
 from numpy import nan
 from cython import boundscheck, wraparound
+#from cpython.pycapsule cimport PyCapsule_New, PyCapsule_IsValid, PyCapsule_GetPointer, PyCapsule_Destructor
 
 # _ta_check_success: defined in _common.pxi
+
+from enum import Enum
+class TALibResult(Enum):
+    OK = 0
+    LIB_NOT_INITIALIZED = 1
+    BAD_PARAM = 2
+    ALLOC_ERR = 3
+    GROUP_NOT_FOUND = 4
+    FUNC_NOT_FOUND = 5
+    INVALID_HANDLE = 6
+    INVALID_PARAM_HOLDER = 7
+    INVALID_PARAM_HOLDER_TYPE = 8
+    INVALID_PARAM_FUNCTION = 9
+    INPUT_NOT_ALL_INITIALIZE = 10
+    OUTPUT_NOT_ALL_INITIALIZE = 11
+    OUT_OF_RANGE_START_INDEX = 12
+    OUT_OF_RANGE_END_INDEX = 13
+    INVALID_LIST_TYPE = 14
+    BAD_OBJECT = 15
+    NOT_SUPPORTED = 16
+    NEED_MORE_DATA = 17
+    IO_FAILED = 18
+    INTERNAL_ERROR = 5000
+    UNKNOWN_ERR = 65535
 
 cdef double NaN = nan
 
@@ -63,8 +90,8 @@ cdef extern from "numpy/arrayobject.h":
 
 np.import_array() # Initialize the NumPy C API
 
-cimport _ta_lib as lib
-from _ta_lib cimport TA_RetCode
+cimport talibrt._ta_lib as lib
+from talibrt._ta_lib cimport TA_RetCode
 
 cdef np.ndarray check_array(np.ndarray real):
     if PyArray_TYPE(real) != np.NPY_DOUBLE:
@@ -204,15 +231,27 @@ for f in functions:
     if 'Lookback' in f: # skip lookback functions
         continue
 
+    state_init = '_StateInit' in f
+    state_free = '_StateFree' in f
+    state_init_or_free =  state_init or state_free
+    state_save = '_StateSave' in f
+    state_load = '_StateLoad' in f
+    state_save_or_load = state_save or state_load
+    state_calc = '_State(' in f
+    state_batch = '_BatchState' in f
+
     i = f.index('(')
-    name = f[:i].split()[1]
+    name = f[:i].split()[2]
     args = f[i:].split(',')
     args = [re.sub('[\(\);]', '', s).strip() for s in args]
 
     shortname = name[3:]
+    indicator_name = shortname.rsplit('_', 1)[0]
     names.append(shortname)
-    func_info = abstract.Function(shortname).info
-    defaults, documentation = abstract._get_defaults_and_docs(func_info)
+    #func_info = abstract.Function(shortname).info
+    #defaults, documentation = abstract._get_defaults_and_docs(func_info)
+    defaults = ""
+    documentation = ""
 
     print('@wraparound(False)  # turn off relative indexing from end of lists')
     print('@boundscheck(False) # turn off bounds-checking for entire function')
@@ -225,6 +264,10 @@ for f in functions:
         if var in ('startIdx', 'endIdx'):
             continue
 
+        if '_state' in var:
+            if state_init or state_load:
+                continue
+
         elif 'out' in var:
             break
 
@@ -232,14 +275,26 @@ for f in functions:
             print(',', end=' ')
         i += 1
 
-        if var.endswith('[]'):
+
+        if '_state' in var:
+            if state_free or state_save or state_calc or state_batch:
+                print('int state', end=' ')
+        elif '_file' in var:
+            print('int hFile', end=' ')
+        elif var.endswith('[]'):
             var = cleanup(var[:-2])
             assert arg.startswith('const double'), arg
             print('np.ndarray %s not None' % var, end=' ')
             docs.append(var)
             docs.append(', ')
 
-        elif var.startswith('opt'):
+        elif state_calc:
+            var = cleanup(var)
+            assert arg.startswith('const double'), arg
+            print('double %s' % var, end=' ')
+            docs.append(var)
+            docs.append(', ')
+        elif not state_batch and var.startswith('opt'):
             var = cleanup(var)
             default_arg = arg.split()[-1][len('optIn'):] # chop off typedef and 'optIn'
             default_arg = default_arg[0].lower() + default_arg[1:] # lowercase first letter
@@ -279,8 +334,117 @@ for f in functions:
         docs.append('\n'.join(tmp_docs))
         docs.append('\n    ')
     print('):')
+
+    if (state_init):
+        state_name = cleanup(args[0].split()[-1])
+        print('    cdef:')
+        print('        void * %s' % state_name)
+        print('        TA_RetCode retCode')
+        print('    retCode = lib.%s(&' % name, end=' ')
+
+        for i, arg in enumerate(args):
+            if i > 0:
+                print(',', end=' ')
+            var = arg.split()[-1]
+            var = cleanup(var)
+            print(var, end='')
+        print(')')
+        print('    _ta_check_success("%s", retCode)' % name)
+        print('    return TALibResult(retCode), <int>_state')
+        print('')
+        print('')
+        continue
+
+    if (state_free):
+        print('    cdef:')
+        print('        void * _state;')
+        print('        TA_RetCode retCode')
+        print('    _state = <void*>state')
+        print('    retCode = lib.%s( & _state )' % name)
+        print('    _ta_check_success("%s", retCode)' % name)
+        print('    return TALibResult(retCode)')
+        print('')
+        continue
+
+    if (state_load):
+        state_name = cleanup(args[0].split()[-1])
+        print('    cdef:')
+        print('        void * %s' % state_name)
+        print('        TA_RetCode retCode')
+        print('    retCode = lib.%s(&%s, <FILE *>hFile)' % (name, state_name))
+        print('    _ta_check_success("%s", retCode)' % name)
+        print('    return TALibResult(retCode), <int>%s' % state_name)
+        print('')
+        print('')
+        continue
+
+    if (state_save):
+        save_name = "TA_%s_StateSave" % indicator_name
+        print('    cdef:')
+        print('        void * _state;')
+        print('        TA_RetCode retCode')
+        print('        const char* name = "%s"' % indicator_name)
+        print('    _state = <void*> state')
+        print('    retCode = lib.%s( _state, <FILE *>hFile )' % save_name)
+        print('    _ta_check_success("%s", retCode)' % save_name)
+        print('    return TALibResult(retCode)')
+        print('')
+        continue
+
+    if (state_calc):
+        print('    cdef:')
+        print('        void * _state;')
+        print('        TA_RetCode retCode')
+        for arg in args:
+            var = arg.split()
+            var_name = ''
+            for v in var:
+                if v.startswith('*'):
+                    v = cleanup(v[1:])
+                if v.startswith('out'):
+                    var_name = cleanup(v)
+                    break
+
+            if var_name != '':
+                print('        ', end='')
+                var = var[:1]
+                for v in var:
+                    print('%s' % v, end=' ')
+                print('%s' % var_name)
+
+        print('    _state = <void*>state')
+
+        print('    retCode = lib.%s( _state' % name, end=' ')
+        for arg in args:
+            var = arg.split()[-1]
+            if not var == "_state":
+                print(',', end=' ')
+                if var.startswith('*'):
+                    var = '&' + var[1:]
+                var = cleanup(var)
+                print('%s' % var, end=' ')
+        print(')')
+
+        print('    need_mode_data = not _ta_check_success("%s", retCode)' % name)
+
+        print('    return TALibResult(retCode)', end='')
+        for arg in args:
+            var = arg.split()[-1]
+            if var.startswith('*'):
+                var = var[1:]
+            if var.startswith('out'):
+                if var not in ("outNBElement", "outBegIdx"):
+                    print(',', end=' ')
+                    print(cleanup(var), end=' ')
+
+        print('')
+        print('')
+        continue
+
     print('    """%s"""' % ''.join(docs))
     print('    cdef:')
+    if state_batch:
+        print('        void * _state;')
     print('        np.npy_intp length')
     print('        int begidx, endidx, lookback')
     print('        TA_RetCode retCode')
@@ -297,6 +461,9 @@ for f in functions:
             print('        int %s' % var)
         else:
             assert False, arg
+
+    if state_batch:
+        print('    _state = <void*> state')
 
     for arg in args:
         var = arg.split()[-1]
@@ -328,13 +495,16 @@ for f in functions:
     print('    begidx = check_begidx%s(length, %s)' % (len(inputs), ', '.join('<double*>(%s.data)' % s for s in inputs)))
 
     print('    endidx = <int>length - begidx - 1')
-    print('    lookback = begidx + lib.%s_Lookback(' % name, end=' ')
-    opts = [arg for arg in args if 'opt' in arg]
-    for i, opt in enumerate(opts):
-        if i > 0:
-            print(',', end=' ')
-        print(cleanup(opt.split()[-1]), end=' ')
-    print(')')
+    if state_batch:
+        print('    lookback = begidx')
+    else:
+        print('    lookback = begidx + lib.%s_Lookback(' % name, end=' ')
+        opts = [arg for arg in args if 'opt' in arg]
+        for i, opt in enumerate(opts):
+            if i > 0:
+                print(',', end=' ')
+            print(cleanup(opt.split()[-1]), end=' ')
+        print(')')
 
     for arg in args:
         var = arg.split()[-1]
@@ -381,8 +551,7 @@ for f in functions:
 
     print(')')
     print('    _ta_check_success("%s", retCode)' % name)
-    print('    return ', end='')
-    i = 0
+    print('    return TALibResult(retCode)', end='')
     for arg in args:
         var = arg.split()[-1]
         if var.endswith('[]'):
@@ -391,13 +560,11 @@ for f in functions:
             var = var[1:]
         if var.startswith('out'):
             if var not in ("outNBElement", "outBegIdx"):
-                if i > 0:
-                    print(',', end=' ')
-                i += 1
+                print(',', end=' ')
                 print(cleanup(var), end=' ')
         else:
-            assert re.match('.*(void|startIdx|endIdx|opt|in)/*', arg), arg
+            assert re.match('.*(void|startIdx|endIdx|opt|in|_state|_file)/*', arg), arg
     print('')
     print('')
 
-print('__TA_FUNCTION_NAMES__ = [%s]' % ','.join(['\"%s\"' % name for name in names]))
+print('__TA_FUNCTION_NAMES__ = [%s]' % ','.join(['\"%s\"' % name for name in names if "_State" not in name and "_BatchState" not in name]))

@@ -17,7 +17,7 @@ from __future__ import print_function
 
 import os
 import sys
-import talib
+import talibrt
 
 import mistune
 from pygments import highlight
@@ -26,7 +26,7 @@ from pygments.formatters.html import HtmlFormatter
 
 from bs4 import BeautifulSoup
 
-from talib.abstract import Function
+from talibrt.abstract import Function
 
 
 INPUT_DIR = os.path.dirname(os.path.realpath(__file__))
@@ -41,15 +41,15 @@ HEADER = '''\
   <head>
     <meta charset='utf-8' />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="TA-Lib : Python wrapper for TA-Lib (http://ta-lib.org/)." />
+    <meta name="description" content="TA-Lib-RT : Python wrapper for TA-Lib-RT (http://ta-lib.org/)." />
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-    <title>TA-Lib</title>
+    <title>TA-Lib-RT</title>
   </head>
 
   <body>
     <div id="header_wrap" class="outer">
         <header class="inner">
-            <a id="forkme_banner" href="https://github.com/mrjbq7/ta-lib">View on GitHub</a>
+            <a id="forkme_banner" href="https://github.com/trufanov-nok/ta-lib-rt">View on GitHub</a>
             <div class="clearfix">
                 <ul id="menu" class="drop">
                     <li><a href="index.html">Home</a></li>
@@ -57,8 +57,8 @@ HEADER = '''\
                 </ul>
             </div>
             <br>
-            <h1 id="project_title"><a href="http://mrjbq7.github.io/ta-lib/">TA-Lib</a></h1>
-            <h2 id="project_tagline">Python wrapper for TA-Lib (http://ta-lib.org/).</h2>
+            <h1 id="project_title"><a href="https://github.com/trufanov-nok/ta-lib-rtb/">TA-Lib-RT</a></h1>
+            <h2 id="project_tagline">Python wrapper for TA-Lib-RT (http://ta-lib.org/).</h2>
             <section id="downloads">
                 <a class="zip_download_link" href="https://github.com/mrjbq7/ta-lib/zipball/master">Download this project as a .zip file</a>
                 <a class="tar_download_link" href="https://github.com/mrjbq7/ta-lib/tarball/master">Download this project as a tar.gz file</a>
@@ -143,7 +143,7 @@ def get_groups_markdown():
 
     doc_links = get_doc_links()
     ret = {}
-    for group, funcs in talib.get_function_groups().items():
+    for group, funcs in talibrt.get_function_groups().items():
         h1 = '# %s' % unpluralize(group)
         h1 = h1 + ' Functions' if 'Function' not in h1 else h1 + 's'
         group_docs = [h1]

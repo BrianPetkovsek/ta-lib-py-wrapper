@@ -20,7 +20,7 @@ close = numpy.random.random(100)
 Calculate a simple moving average of the close prices:
 
 ```python
-output = talib.SMA(close)
+output = talibrt.SMA(close)
 ```
 
 Calculating bollinger bands, with triple exponential moving average:
@@ -28,13 +28,13 @@ Calculating bollinger bands, with triple exponential moving average:
 ```python
 from talib import MA_Type
 
-upper, middle, lower = talib.BBANDS(close, matype=MA_Type.T3)
+upper, middle, lower = talibrt.BBANDS(close, matype=MA_Type.T3)
 ```
 
 Calculating momentum of the close prices, with a time period of 5:
 
 ```python
-output = talib.MOM(close, timeperiod=5)
+output = talibrt.MOM(close, timeperiod=5)
 ```
 
 Documentation for all functions:

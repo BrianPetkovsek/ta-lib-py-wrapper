@@ -27,7 +27,7 @@ sma = abstract.Function('sma')
 From there, calling functions is basically the same as the function API:
 
 ```python
-from talib.abstract import *
+from talibrt.abstract import *
 output = SMA(input_arrays, timeperiod=25) # calculate on close prices by default
 output = SMA(input_arrays, timeperiod=25, price='open') # calculate on opens
 upper, middle, lower = BBANDS(input_arrays, 20, 2, 2)

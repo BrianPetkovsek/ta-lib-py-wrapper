@@ -12,13 +12,13 @@ Here's the full list of make commands (see the Makefile file):
 make build     # builds and places libs in the project directory; required for testing
 make clean     # cleans the local build files
 make install   # installs talib system-wide
-make generate: # generates a fresh _func.pxi, _stream.pxi file. Requires talib and TA-Lib to both be installed
+make generate: # generates a fresh _func.pxi. Requires talib and TA-Lib to both be installed
 make perf      # run performance profiling
 make test      # run tests
 
 The source code is comprised of one python package, located in the talib
 directory, which itself has one Cython module (_ta_lib) which consists of
-four parts: _common, _func, _abstract and _stream.
+three parts: _common, _func, _abstract.
 
 talib/_common.pxi
   An internal-use file for functionality shared between func and abstract.
@@ -35,11 +35,8 @@ talib/_ta_lib.pyx
   This "Cython header file" defines the C-level functions, variables and types we
   need to use in the above pyx files.
 
-talib/_stream.pxi
-  This file contains code for interfacing a "streaming" interface to TA-Lib.
-
-tools/generate_func.py,generate_stream.py
-  Scripts that generate and print _func.pxi or _stream.pxi to stdout. Gets information
+tools/generate_func.py
+  Script that generates and prints _func.pxi. Gets information
   about all functions from the C headers of the installed TA-Lib.
 
 If you are interested in developing new indicator functions or whatnot on

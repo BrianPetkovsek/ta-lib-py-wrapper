@@ -141,7 +141,7 @@ and unzip to ``C:\ta-lib``.
 > 4. Build TA-Lib Library
 >    * From Windows Start Menu, Start ``[VS2015 x64 Native Tools Command
 >      Prompt]``
->    * Move to ``C:\ta-lib\c\make\cdr\win32\msvc``
+>    * Move to ``C:\ta-lib-rt\c\make\cdr\win32\msvc``
 >    * Build the Library ``nmake``
 
 You might also try these unofficial windows binaries for both 32-bit and
@@ -189,7 +189,7 @@ close = numpy.random.random(100)
 Calculate a simple moving average of the close prices:
 
 ```python
-output = talib.SMA(close)
+output = talibrt.SMA(close)
 ```
 
 Calculating bollinger bands, with triple exponential moving average:
@@ -197,13 +197,13 @@ Calculating bollinger bands, with triple exponential moving average:
 ```python
 from talib import MA_Type
 
-upper, middle, lower = talib.BBANDS(close, matype=MA_Type.T3)
+upper, middle, lower = talibrt.BBANDS(close, matype=MA_Type.T3)
 ```
 
 Calculating momentum of the close prices, with a time period of 5:
 
 ```python
-output = talib.MOM(close, timeperiod=5)
+output = talibrt.MOM(close, timeperiod=5)
 ```
 
 ## Abstract API
@@ -246,7 +246,7 @@ SMA = abstract.Function('sma')
 From there, calling functions is basically the same as the function API:
 
 ```python
-from talib.abstract import *
+from talibrt.abstract import *
 
 # uses close prices (default)
 output = SMA(inputs, timeperiod=25)
@@ -274,10 +274,10 @@ etc):
 import talib
 
 # list of functions
-print talib.get_functions()
+print talibrt.get_functions()
 
 # dict of functions by group
-print talib.get_function_groups()
+print talibrt.get_function_groups()
 ```
 
 ### Indicator Groups

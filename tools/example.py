@@ -2,19 +2,19 @@ from __future__ import print_function
 
 import sys
 import numpy as np
-import pylab
+import matplotlib.pylab as pylab
 
-import talib
-from talib.abstract import Function
+import talibrt
+from talibrt.abstract import Function
 
 TEST_LEN = int(sys.argv[1]) if len(sys.argv) > 1 else 100
 r = np.arange(TEST_LEN)
 idata = np.random.random(TEST_LEN)
 
 def func_example():
-    odata = talib.MA(idata)
-    upper, middle, lower = talib.BBANDS(idata)
-    kama = talib.KAMA(idata)
+    odata = talibrt.MA(idata)
+    upper, middle, lower = talibrt.BBANDS(idata)
+    kama = talibrt.KAMA(idata)
     plot(odata, upper, middle, lower, kama)
 
 def abstract_example():
@@ -48,13 +48,13 @@ def plot(odata, upper, middle, lower, kama):
 
 if __name__ == '__main__':
     print('All functions (sorted by group):')
-    groups = talib.get_function_groups()
+    groups = talibrt.get_function_groups()
     for group, functions in sorted(groups.items()):
         print('%s functions: %s' % (group, functions))
 
     if len(sys.argv) == 1 or sys.argv[1] == 'func':
-        print('Using talib.func')
+        print('Using talibrt.func')
         func_example()
     else:
-        print('Using talib.abstract')
+        print('Using talibrt.abstract')
         abstract_example()
