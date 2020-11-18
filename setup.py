@@ -17,7 +17,7 @@ except:
     from distutils.extension import Extension
     requires = {"requires": ["numpy"]}
 
-lib_talib_name = 'ta_lib_rt'  # the underlying C library's name
+lib_talib_name = 'ta-lib-rt'  # the underlying C library's name
 
 runtime_lib_dirs = []
 
@@ -50,7 +50,7 @@ for prefix in ['darwin', 'linux', 'bsd', 'sunos']:
 
 if sys.platform == "win32":
     platform_supported = True
-    lib_talib_name = 'ta_libc_cdr'
+    lib_talib_name = 'ta-libc-cdr'
     include_dirs = [r"c:\ta-lib-rt\c\include"]
     lib_talib_dirs = [r"c:\ta-lib-rt\c\lib"]
 
@@ -95,7 +95,7 @@ ext_modules = [
 
 setup(
     name = 'TA-Lib-RT',
-    version = '0.7.0',
+    version = '0.8.1-alpha',
     description = 'Python wrapper for TA-Lib-RT',
     author = 'John Benediktsson',
     author_email = 'mrjbq7@gmail.com',
