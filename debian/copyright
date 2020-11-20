@@ -1,0 +1,7 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Source: https://github.com/trufanov-nok/ta-lib-py-wrapper
+
+Files: *
+Copyright: 2012-2013 Silfur Capital, LLC. All Rights Reserved.
+ The contents of talib/abstract.pyx are Copyright (c) 2013 Brian A Cappello. All Rights Reserved.
+License: see license in LICENSE file

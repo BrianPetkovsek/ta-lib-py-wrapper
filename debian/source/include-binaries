@@ -1,0 +1,8 @@
+build/temp.linux-x86_64-3.8/talibrt/_ta_lib.o
+talibrt/__pycache__/__init__.cpython-38.pyc
+talibrt/__pycache__/abstract.cpython-38.pyc
+talibrt/__pycache__/test_abstract.cpython-38.pyc
+talibrt/__pycache__/test_data.cpython-38.pyc
+talibrt/__pycache__/test_func.cpython-38.pyc
+talibrt/__pycache__/test_pandas.cpython-38.pyc
+talibrt/_ta_lib.cpython-38-x86_64-linux-gnu.so
