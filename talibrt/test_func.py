@@ -6,10 +6,10 @@ from talibrt import func
 from talibrt.test_data import series, assert_np_arrays_equal, assert_np_arrays_not_equal
 
 def test_talib_version():
-    assert_equals(talibrt.__ta_version__[:5], b'0.4.0')
+    assert_equals(talibrt.__ta_version__[:4], b'0.8.')
 
 def test_num_functions():
-    assert_equals(len(talibrt.get_functions()), 158)
+    assert_equals(len(talibrt.get_functions()), 163)
 
 def test_input_wrong_type():
     a1 = np.arange(10, dtype=int)
