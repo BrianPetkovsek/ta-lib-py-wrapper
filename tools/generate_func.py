@@ -278,7 +278,7 @@ for f in functions:
 
         if '_state' in var:
             if state_free or state_save or state_calc or state_batch:
-                print('int state', end=' ')
+                print('size_t state', end=' ')
         elif '_file' in var:
             print('int hFile', end=' ')
         elif var.endswith('[]'):
@@ -350,7 +350,7 @@ for f in functions:
             print(var, end='')
         print(')')
         print('    _ta_check_success("%s", retCode)' % name)
-        print('    return TALibResult(retCode), <int>_state')
+        print('    return TALibResult(retCode), <size_t>_state')
         print('')
         print('')
         continue
@@ -373,7 +373,7 @@ for f in functions:
         print('        TA_RetCode retCode')
         print('    retCode = lib.%s(&%s, <FILE *>hFile)' % (name, state_name))
         print('    _ta_check_success("%s", retCode)' % name)
-        print('    return TALibResult(retCode), <int>%s' % state_name)
+        print('    return TALibResult(retCode), <size_t>%s' % state_name)
         print('')
         print('')
         continue

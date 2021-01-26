@@ -200,12 +200,12 @@ def ACCBANDS_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_ACCBANDS_StateInit(& _state, timeperiod)
     _ta_check_success("TA_ACCBANDS_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ACCBANDS_State( int state , double high , double low , double close ):
+def ACCBANDS_State( size_t state , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -219,7 +219,7 @@ def ACCBANDS_State( int state , double high , double low , double close ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ACCBANDS_BatchState( int state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def ACCBANDS_BatchState( size_t state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ ACCBANDS_BatchState(high, low, close)"""
     cdef:
         void * _state;
@@ -248,7 +248,7 @@ def ACCBANDS_BatchState( int state , np.ndarray high not None , np.ndarray low n
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ACCBANDS_StateFree( int state ):
+def ACCBANDS_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -259,7 +259,7 @@ def ACCBANDS_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ACCBANDS_StateSave( int state , int hFile ):
+def ACCBANDS_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -277,7 +277,7 @@ def ACCBANDS_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_ACCBANDS_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_ACCBANDS_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -309,12 +309,12 @@ def ACOS_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_ACOS_StateInit(& _state)
     _ta_check_success("TA_ACOS_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ACOS_State( int state , double real ):
+def ACOS_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -326,7 +326,7 @@ def ACOS_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ACOS_BatchState( int state , np.ndarray real not None ):
+def ACOS_BatchState( size_t state , np.ndarray real not None ):
     """ ACOS_BatchState(real)"""
     cdef:
         void * _state;
@@ -349,7 +349,7 @@ def ACOS_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ACOS_StateFree( int state ):
+def ACOS_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -360,7 +360,7 @@ def ACOS_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ACOS_StateSave( int state , int hFile ):
+def ACOS_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -378,7 +378,7 @@ def ACOS_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_ACOS_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_ACOS_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -413,12 +413,12 @@ def AD_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_AD_StateInit(& _state)
     _ta_check_success("TA_AD_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def AD_State( int state , double high , double low , double close , double volume ):
+def AD_State( size_t state , double high , double low , double close , double volume ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -430,7 +430,7 @@ def AD_State( int state , double high , double low , double close , double volum
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def AD_BatchState( int state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None , np.ndarray volume not None ):
+def AD_BatchState( size_t state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None , np.ndarray volume not None ):
     """ AD_BatchState(high, low, close, volume)"""
     cdef:
         void * _state;
@@ -456,7 +456,7 @@ def AD_BatchState( int state , np.ndarray high not None , np.ndarray low not Non
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def AD_StateFree( int state ):
+def AD_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -467,7 +467,7 @@ def AD_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def AD_StateSave( int state , int hFile ):
+def AD_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -485,7 +485,7 @@ def AD_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_AD_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_AD_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -518,12 +518,12 @@ def ADD_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_ADD_StateInit(& _state)
     _ta_check_success("TA_ADD_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ADD_State( int state , double real0 , double real1 ):
+def ADD_State( size_t state , double real0 , double real1 ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -535,7 +535,7 @@ def ADD_State( int state , double real0 , double real1 ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ADD_BatchState( int state , np.ndarray real0 not None , np.ndarray real1 not None ):
+def ADD_BatchState( size_t state , np.ndarray real0 not None , np.ndarray real1 not None ):
     """ ADD_BatchState(real0, real1)"""
     cdef:
         void * _state;
@@ -559,7 +559,7 @@ def ADD_BatchState( int state , np.ndarray real0 not None , np.ndarray real1 not
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ADD_StateFree( int state ):
+def ADD_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -570,7 +570,7 @@ def ADD_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ADD_StateSave( int state , int hFile ):
+def ADD_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -588,7 +588,7 @@ def ADD_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_ADD_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_ADD_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -623,12 +623,12 @@ def ADOSC_StateInit( int fastperiod=-2**31 , int slowperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_ADOSC_StateInit(& _state, fastperiod, slowperiod)
     _ta_check_success("TA_ADOSC_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ADOSC_State( int state , double high , double low , double close , double volume ):
+def ADOSC_State( size_t state , double high , double low , double close , double volume ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -640,7 +640,7 @@ def ADOSC_State( int state , double high , double low , double close , double vo
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ADOSC_BatchState( int state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None , np.ndarray volume not None ):
+def ADOSC_BatchState( size_t state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None , np.ndarray volume not None ):
     """ ADOSC_BatchState(high, low, close, volume)"""
     cdef:
         void * _state;
@@ -666,7 +666,7 @@ def ADOSC_BatchState( int state , np.ndarray high not None , np.ndarray low not 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ADOSC_StateFree( int state ):
+def ADOSC_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -677,7 +677,7 @@ def ADOSC_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ADOSC_StateSave( int state , int hFile ):
+def ADOSC_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -695,7 +695,7 @@ def ADOSC_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_ADOSC_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_ADOSC_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -729,12 +729,12 @@ def ADX_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_ADX_StateInit(& _state, timeperiod)
     _ta_check_success("TA_ADX_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ADX_State( int state , double high , double low , double close ):
+def ADX_State( size_t state , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -746,7 +746,7 @@ def ADX_State( int state , double high , double low , double close ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ADX_BatchState( int state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def ADX_BatchState( size_t state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ ADX_BatchState(high, low, close)"""
     cdef:
         void * _state;
@@ -771,7 +771,7 @@ def ADX_BatchState( int state , np.ndarray high not None , np.ndarray low not No
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ADX_StateFree( int state ):
+def ADX_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -782,7 +782,7 @@ def ADX_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ADX_StateSave( int state , int hFile ):
+def ADX_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -800,7 +800,7 @@ def ADX_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_ADX_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_ADX_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -834,12 +834,12 @@ def ADXR_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_ADXR_StateInit(& _state, timeperiod)
     _ta_check_success("TA_ADXR_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ADXR_State( int state , double high , double low , double close ):
+def ADXR_State( size_t state , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -851,7 +851,7 @@ def ADXR_State( int state , double high , double low , double close ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ADXR_BatchState( int state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def ADXR_BatchState( size_t state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ ADXR_BatchState(high, low, close)"""
     cdef:
         void * _state;
@@ -876,7 +876,7 @@ def ADXR_BatchState( int state , np.ndarray high not None , np.ndarray low not N
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ADXR_StateFree( int state ):
+def ADXR_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -887,7 +887,7 @@ def ADXR_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ADXR_StateSave( int state , int hFile ):
+def ADXR_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -905,7 +905,7 @@ def ADXR_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_ADXR_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_ADXR_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -937,12 +937,12 @@ def APO_StateInit( int fastperiod=-2**31 , int slowperiod=-2**31 , int matype=0 
         TA_RetCode retCode
     retCode = lib.TA_APO_StateInit(& _state, fastperiod, slowperiod, matype)
     _ta_check_success("TA_APO_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def APO_State( int state , double real ):
+def APO_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -954,7 +954,7 @@ def APO_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def APO_BatchState( int state , np.ndarray real not None ):
+def APO_BatchState( size_t state , np.ndarray real not None ):
     """ APO_BatchState(real)"""
     cdef:
         void * _state;
@@ -977,7 +977,7 @@ def APO_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def APO_StateFree( int state ):
+def APO_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -988,7 +988,7 @@ def APO_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def APO_StateSave( int state , int hFile ):
+def APO_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -1006,7 +1006,7 @@ def APO_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_APO_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_APO_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -1041,12 +1041,12 @@ def AROON_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_AROON_StateInit(& _state, timeperiod)
     _ta_check_success("TA_AROON_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def AROON_State( int state , double high , double low ):
+def AROON_State( size_t state , double high , double low ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -1059,7 +1059,7 @@ def AROON_State( int state , double high , double low ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def AROON_BatchState( int state , np.ndarray high not None , np.ndarray low not None ):
+def AROON_BatchState( size_t state , np.ndarray high not None , np.ndarray low not None ):
     """ AROON_BatchState(high, low)"""
     cdef:
         void * _state;
@@ -1085,7 +1085,7 @@ def AROON_BatchState( int state , np.ndarray high not None , np.ndarray low not 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def AROON_StateFree( int state ):
+def AROON_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -1096,7 +1096,7 @@ def AROON_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def AROON_StateSave( int state , int hFile ):
+def AROON_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -1114,7 +1114,7 @@ def AROON_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_AROON_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_AROON_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -1147,12 +1147,12 @@ def AROONOSC_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_AROONOSC_StateInit(& _state, timeperiod)
     _ta_check_success("TA_AROONOSC_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def AROONOSC_State( int state , double high , double low ):
+def AROONOSC_State( size_t state , double high , double low ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -1164,7 +1164,7 @@ def AROONOSC_State( int state , double high , double low ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def AROONOSC_BatchState( int state , np.ndarray high not None , np.ndarray low not None ):
+def AROONOSC_BatchState( size_t state , np.ndarray high not None , np.ndarray low not None ):
     """ AROONOSC_BatchState(high, low)"""
     cdef:
         void * _state;
@@ -1188,7 +1188,7 @@ def AROONOSC_BatchState( int state , np.ndarray high not None , np.ndarray low n
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def AROONOSC_StateFree( int state ):
+def AROONOSC_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -1199,7 +1199,7 @@ def AROONOSC_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def AROONOSC_StateSave( int state , int hFile ):
+def AROONOSC_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -1217,7 +1217,7 @@ def AROONOSC_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_AROONOSC_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_AROONOSC_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -1249,12 +1249,12 @@ def ASIN_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_ASIN_StateInit(& _state)
     _ta_check_success("TA_ASIN_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ASIN_State( int state , double real ):
+def ASIN_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -1266,7 +1266,7 @@ def ASIN_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ASIN_BatchState( int state , np.ndarray real not None ):
+def ASIN_BatchState( size_t state , np.ndarray real not None ):
     """ ASIN_BatchState(real)"""
     cdef:
         void * _state;
@@ -1289,7 +1289,7 @@ def ASIN_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ASIN_StateFree( int state ):
+def ASIN_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -1300,7 +1300,7 @@ def ASIN_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ASIN_StateSave( int state , int hFile ):
+def ASIN_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -1318,7 +1318,7 @@ def ASIN_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_ASIN_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_ASIN_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -1350,12 +1350,12 @@ def ATAN_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_ATAN_StateInit(& _state)
     _ta_check_success("TA_ATAN_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ATAN_State( int state , double real ):
+def ATAN_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -1367,7 +1367,7 @@ def ATAN_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ATAN_BatchState( int state , np.ndarray real not None ):
+def ATAN_BatchState( size_t state , np.ndarray real not None ):
     """ ATAN_BatchState(real)"""
     cdef:
         void * _state;
@@ -1390,7 +1390,7 @@ def ATAN_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ATAN_StateFree( int state ):
+def ATAN_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -1401,7 +1401,7 @@ def ATAN_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ATAN_StateSave( int state , int hFile ):
+def ATAN_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -1419,7 +1419,7 @@ def ATAN_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_ATAN_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_ATAN_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -1453,12 +1453,12 @@ def ATR_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_ATR_StateInit(& _state, timeperiod)
     _ta_check_success("TA_ATR_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ATR_State( int state , double high , double low , double close ):
+def ATR_State( size_t state , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -1470,7 +1470,7 @@ def ATR_State( int state , double high , double low , double close ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ATR_BatchState( int state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def ATR_BatchState( size_t state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ ATR_BatchState(high, low, close)"""
     cdef:
         void * _state;
@@ -1495,7 +1495,7 @@ def ATR_BatchState( int state , np.ndarray high not None , np.ndarray low not No
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ATR_StateFree( int state ):
+def ATR_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -1506,7 +1506,7 @@ def ATR_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ATR_StateSave( int state , int hFile ):
+def ATR_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -1524,7 +1524,7 @@ def ATR_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_ATR_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_ATR_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -1559,12 +1559,12 @@ def AVGPRICE_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_AVGPRICE_StateInit(& _state)
     _ta_check_success("TA_AVGPRICE_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def AVGPRICE_State( int state , double open , double high , double low , double close ):
+def AVGPRICE_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -1576,7 +1576,7 @@ def AVGPRICE_State( int state , double open , double high , double low , double 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def AVGPRICE_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def AVGPRICE_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ AVGPRICE_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -1602,7 +1602,7 @@ def AVGPRICE_BatchState( int state , np.ndarray open not None , np.ndarray high 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def AVGPRICE_StateFree( int state ):
+def AVGPRICE_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -1613,7 +1613,7 @@ def AVGPRICE_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def AVGPRICE_StateSave( int state , int hFile ):
+def AVGPRICE_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -1631,7 +1631,7 @@ def AVGPRICE_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_AVGPRICE_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_AVGPRICE_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -1663,12 +1663,12 @@ def AVGDEV_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_AVGDEV_StateInit(& _state, timeperiod)
     _ta_check_success("TA_AVGDEV_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def AVGDEV_State( int state , double real ):
+def AVGDEV_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -1680,7 +1680,7 @@ def AVGDEV_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def AVGDEV_BatchState( int state , np.ndarray real not None ):
+def AVGDEV_BatchState( size_t state , np.ndarray real not None ):
     """ AVGDEV_BatchState(real)"""
     cdef:
         void * _state;
@@ -1703,7 +1703,7 @@ def AVGDEV_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def AVGDEV_StateFree( int state ):
+def AVGDEV_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -1714,7 +1714,7 @@ def AVGDEV_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def AVGDEV_StateSave( int state , int hFile ):
+def AVGDEV_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -1732,7 +1732,7 @@ def AVGDEV_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_AVGDEV_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_AVGDEV_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -1768,12 +1768,12 @@ def BBANDS_StateInit( int timeperiod=-2**31 , double nbdevup=-4e37 , double nbde
         TA_RetCode retCode
     retCode = lib.TA_BBANDS_StateInit(& _state, timeperiod, nbdevup, nbdevdn, matype)
     _ta_check_success("TA_BBANDS_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def BBANDS_State( int state , double real ):
+def BBANDS_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -1787,7 +1787,7 @@ def BBANDS_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def BBANDS_BatchState( int state , np.ndarray real not None ):
+def BBANDS_BatchState( size_t state , np.ndarray real not None ):
     """ BBANDS_BatchState(real)"""
     cdef:
         void * _state;
@@ -1814,7 +1814,7 @@ def BBANDS_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def BBANDS_StateFree( int state ):
+def BBANDS_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -1825,7 +1825,7 @@ def BBANDS_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def BBANDS_StateSave( int state , int hFile ):
+def BBANDS_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -1843,7 +1843,7 @@ def BBANDS_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_BBANDS_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_BBANDS_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -1876,12 +1876,12 @@ def BETA_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_BETA_StateInit(& _state, timeperiod)
     _ta_check_success("TA_BETA_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def BETA_State( int state , double real0 , double real1 ):
+def BETA_State( size_t state , double real0 , double real1 ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -1893,7 +1893,7 @@ def BETA_State( int state , double real0 , double real1 ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def BETA_BatchState( int state , np.ndarray real0 not None , np.ndarray real1 not None ):
+def BETA_BatchState( size_t state , np.ndarray real0 not None , np.ndarray real1 not None ):
     """ BETA_BatchState(real0, real1)"""
     cdef:
         void * _state;
@@ -1917,7 +1917,7 @@ def BETA_BatchState( int state , np.ndarray real0 not None , np.ndarray real1 no
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def BETA_StateFree( int state ):
+def BETA_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -1928,7 +1928,7 @@ def BETA_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def BETA_StateSave( int state , int hFile ):
+def BETA_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -1946,7 +1946,7 @@ def BETA_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_BETA_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_BETA_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -1981,12 +1981,12 @@ def BOP_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_BOP_StateInit(& _state)
     _ta_check_success("TA_BOP_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def BOP_State( int state , double open , double high , double low , double close ):
+def BOP_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -1998,7 +1998,7 @@ def BOP_State( int state , double open , double high , double low , double close
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def BOP_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def BOP_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ BOP_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -2024,7 +2024,7 @@ def BOP_BatchState( int state , np.ndarray open not None , np.ndarray high not N
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def BOP_StateFree( int state ):
+def BOP_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -2035,7 +2035,7 @@ def BOP_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def BOP_StateSave( int state , int hFile ):
+def BOP_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -2053,7 +2053,7 @@ def BOP_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_BOP_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_BOP_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -2087,12 +2087,12 @@ def CCI_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_CCI_StateInit(& _state, timeperiod)
     _ta_check_success("TA_CCI_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CCI_State( int state , double high , double low , double close ):
+def CCI_State( size_t state , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -2104,7 +2104,7 @@ def CCI_State( int state , double high , double low , double close ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CCI_BatchState( int state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CCI_BatchState( size_t state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CCI_BatchState(high, low, close)"""
     cdef:
         void * _state;
@@ -2129,7 +2129,7 @@ def CCI_BatchState( int state , np.ndarray high not None , np.ndarray low not No
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CCI_StateFree( int state ):
+def CCI_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -2140,7 +2140,7 @@ def CCI_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CCI_StateSave( int state , int hFile ):
+def CCI_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -2158,7 +2158,7 @@ def CCI_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CCI_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CCI_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -2193,12 +2193,12 @@ def CDL2CROWS_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDL2CROWS_StateInit(& _state)
     _ta_check_success("TA_CDL2CROWS_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDL2CROWS_State( int state , double open , double high , double low , double close ):
+def CDL2CROWS_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -2210,7 +2210,7 @@ def CDL2CROWS_State( int state , double open , double high , double low , double
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDL2CROWS_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDL2CROWS_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDL2CROWS_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -2236,7 +2236,7 @@ def CDL2CROWS_BatchState( int state , np.ndarray open not None , np.ndarray high
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDL2CROWS_StateFree( int state ):
+def CDL2CROWS_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -2247,7 +2247,7 @@ def CDL2CROWS_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDL2CROWS_StateSave( int state , int hFile ):
+def CDL2CROWS_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -2265,7 +2265,7 @@ def CDL2CROWS_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDL2CROWS_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDL2CROWS_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -2300,12 +2300,12 @@ def CDL3BLACKCROWS_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDL3BLACKCROWS_StateInit(& _state)
     _ta_check_success("TA_CDL3BLACKCROWS_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDL3BLACKCROWS_State( int state , double open , double high , double low , double close ):
+def CDL3BLACKCROWS_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -2317,7 +2317,7 @@ def CDL3BLACKCROWS_State( int state , double open , double high , double low , d
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDL3BLACKCROWS_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDL3BLACKCROWS_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDL3BLACKCROWS_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -2343,7 +2343,7 @@ def CDL3BLACKCROWS_BatchState( int state , np.ndarray open not None , np.ndarray
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDL3BLACKCROWS_StateFree( int state ):
+def CDL3BLACKCROWS_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -2354,7 +2354,7 @@ def CDL3BLACKCROWS_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDL3BLACKCROWS_StateSave( int state , int hFile ):
+def CDL3BLACKCROWS_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -2372,7 +2372,7 @@ def CDL3BLACKCROWS_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDL3BLACKCROWS_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDL3BLACKCROWS_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -2407,12 +2407,12 @@ def CDL3INSIDE_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDL3INSIDE_StateInit(& _state)
     _ta_check_success("TA_CDL3INSIDE_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDL3INSIDE_State( int state , double open , double high , double low , double close ):
+def CDL3INSIDE_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -2424,7 +2424,7 @@ def CDL3INSIDE_State( int state , double open , double high , double low , doubl
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDL3INSIDE_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDL3INSIDE_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDL3INSIDE_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -2450,7 +2450,7 @@ def CDL3INSIDE_BatchState( int state , np.ndarray open not None , np.ndarray hig
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDL3INSIDE_StateFree( int state ):
+def CDL3INSIDE_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -2461,7 +2461,7 @@ def CDL3INSIDE_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDL3INSIDE_StateSave( int state , int hFile ):
+def CDL3INSIDE_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -2479,7 +2479,7 @@ def CDL3INSIDE_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDL3INSIDE_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDL3INSIDE_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -2514,12 +2514,12 @@ def CDL3LINESTRIKE_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDL3LINESTRIKE_StateInit(& _state)
     _ta_check_success("TA_CDL3LINESTRIKE_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDL3LINESTRIKE_State( int state , double open , double high , double low , double close ):
+def CDL3LINESTRIKE_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -2531,7 +2531,7 @@ def CDL3LINESTRIKE_State( int state , double open , double high , double low , d
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDL3LINESTRIKE_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDL3LINESTRIKE_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDL3LINESTRIKE_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -2557,7 +2557,7 @@ def CDL3LINESTRIKE_BatchState( int state , np.ndarray open not None , np.ndarray
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDL3LINESTRIKE_StateFree( int state ):
+def CDL3LINESTRIKE_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -2568,7 +2568,7 @@ def CDL3LINESTRIKE_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDL3LINESTRIKE_StateSave( int state , int hFile ):
+def CDL3LINESTRIKE_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -2586,7 +2586,7 @@ def CDL3LINESTRIKE_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDL3LINESTRIKE_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDL3LINESTRIKE_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -2621,12 +2621,12 @@ def CDL3OUTSIDE_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDL3OUTSIDE_StateInit(& _state)
     _ta_check_success("TA_CDL3OUTSIDE_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDL3OUTSIDE_State( int state , double open , double high , double low , double close ):
+def CDL3OUTSIDE_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -2638,7 +2638,7 @@ def CDL3OUTSIDE_State( int state , double open , double high , double low , doub
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDL3OUTSIDE_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDL3OUTSIDE_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDL3OUTSIDE_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -2664,7 +2664,7 @@ def CDL3OUTSIDE_BatchState( int state , np.ndarray open not None , np.ndarray hi
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDL3OUTSIDE_StateFree( int state ):
+def CDL3OUTSIDE_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -2675,7 +2675,7 @@ def CDL3OUTSIDE_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDL3OUTSIDE_StateSave( int state , int hFile ):
+def CDL3OUTSIDE_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -2693,7 +2693,7 @@ def CDL3OUTSIDE_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDL3OUTSIDE_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDL3OUTSIDE_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -2728,12 +2728,12 @@ def CDL3STARSINSOUTH_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDL3STARSINSOUTH_StateInit(& _state)
     _ta_check_success("TA_CDL3STARSINSOUTH_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDL3STARSINSOUTH_State( int state , double open , double high , double low , double close ):
+def CDL3STARSINSOUTH_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -2745,7 +2745,7 @@ def CDL3STARSINSOUTH_State( int state , double open , double high , double low ,
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDL3STARSINSOUTH_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDL3STARSINSOUTH_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDL3STARSINSOUTH_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -2771,7 +2771,7 @@ def CDL3STARSINSOUTH_BatchState( int state , np.ndarray open not None , np.ndarr
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDL3STARSINSOUTH_StateFree( int state ):
+def CDL3STARSINSOUTH_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -2782,7 +2782,7 @@ def CDL3STARSINSOUTH_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDL3STARSINSOUTH_StateSave( int state , int hFile ):
+def CDL3STARSINSOUTH_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -2800,7 +2800,7 @@ def CDL3STARSINSOUTH_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDL3STARSINSOUTH_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDL3STARSINSOUTH_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -2835,12 +2835,12 @@ def CDL3WHITESOLDIERS_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDL3WHITESOLDIERS_StateInit(& _state)
     _ta_check_success("TA_CDL3WHITESOLDIERS_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDL3WHITESOLDIERS_State( int state , double open , double high , double low , double close ):
+def CDL3WHITESOLDIERS_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -2852,7 +2852,7 @@ def CDL3WHITESOLDIERS_State( int state , double open , double high , double low 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDL3WHITESOLDIERS_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDL3WHITESOLDIERS_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDL3WHITESOLDIERS_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -2878,7 +2878,7 @@ def CDL3WHITESOLDIERS_BatchState( int state , np.ndarray open not None , np.ndar
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDL3WHITESOLDIERS_StateFree( int state ):
+def CDL3WHITESOLDIERS_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -2889,7 +2889,7 @@ def CDL3WHITESOLDIERS_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDL3WHITESOLDIERS_StateSave( int state , int hFile ):
+def CDL3WHITESOLDIERS_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -2907,7 +2907,7 @@ def CDL3WHITESOLDIERS_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDL3WHITESOLDIERS_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDL3WHITESOLDIERS_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -2942,12 +2942,12 @@ def CDLABANDONEDBABY_StateInit( double penetration=-4e37 ):
         TA_RetCode retCode
     retCode = lib.TA_CDLABANDONEDBABY_StateInit(& _state, penetration)
     _ta_check_success("TA_CDLABANDONEDBABY_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLABANDONEDBABY_State( int state , double open , double high , double low , double close ):
+def CDLABANDONEDBABY_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -2959,7 +2959,7 @@ def CDLABANDONEDBABY_State( int state , double open , double high , double low ,
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLABANDONEDBABY_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLABANDONEDBABY_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLABANDONEDBABY_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -2985,7 +2985,7 @@ def CDLABANDONEDBABY_BatchState( int state , np.ndarray open not None , np.ndarr
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLABANDONEDBABY_StateFree( int state ):
+def CDLABANDONEDBABY_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -2996,7 +2996,7 @@ def CDLABANDONEDBABY_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLABANDONEDBABY_StateSave( int state , int hFile ):
+def CDLABANDONEDBABY_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -3014,7 +3014,7 @@ def CDLABANDONEDBABY_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLABANDONEDBABY_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLABANDONEDBABY_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -3049,12 +3049,12 @@ def CDLADVANCEBLOCK_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLADVANCEBLOCK_StateInit(& _state)
     _ta_check_success("TA_CDLADVANCEBLOCK_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLADVANCEBLOCK_State( int state , double open , double high , double low , double close ):
+def CDLADVANCEBLOCK_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -3066,7 +3066,7 @@ def CDLADVANCEBLOCK_State( int state , double open , double high , double low , 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLADVANCEBLOCK_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLADVANCEBLOCK_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLADVANCEBLOCK_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -3092,7 +3092,7 @@ def CDLADVANCEBLOCK_BatchState( int state , np.ndarray open not None , np.ndarra
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLADVANCEBLOCK_StateFree( int state ):
+def CDLADVANCEBLOCK_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -3103,7 +3103,7 @@ def CDLADVANCEBLOCK_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLADVANCEBLOCK_StateSave( int state , int hFile ):
+def CDLADVANCEBLOCK_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -3121,7 +3121,7 @@ def CDLADVANCEBLOCK_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLADVANCEBLOCK_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLADVANCEBLOCK_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -3156,12 +3156,12 @@ def CDLBELTHOLD_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLBELTHOLD_StateInit(& _state)
     _ta_check_success("TA_CDLBELTHOLD_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLBELTHOLD_State( int state , double open , double high , double low , double close ):
+def CDLBELTHOLD_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -3173,7 +3173,7 @@ def CDLBELTHOLD_State( int state , double open , double high , double low , doub
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLBELTHOLD_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLBELTHOLD_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLBELTHOLD_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -3199,7 +3199,7 @@ def CDLBELTHOLD_BatchState( int state , np.ndarray open not None , np.ndarray hi
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLBELTHOLD_StateFree( int state ):
+def CDLBELTHOLD_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -3210,7 +3210,7 @@ def CDLBELTHOLD_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLBELTHOLD_StateSave( int state , int hFile ):
+def CDLBELTHOLD_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -3228,7 +3228,7 @@ def CDLBELTHOLD_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLBELTHOLD_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLBELTHOLD_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -3263,12 +3263,12 @@ def CDLBREAKAWAY_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLBREAKAWAY_StateInit(& _state)
     _ta_check_success("TA_CDLBREAKAWAY_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLBREAKAWAY_State( int state , double open , double high , double low , double close ):
+def CDLBREAKAWAY_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -3280,7 +3280,7 @@ def CDLBREAKAWAY_State( int state , double open , double high , double low , dou
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLBREAKAWAY_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLBREAKAWAY_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLBREAKAWAY_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -3306,7 +3306,7 @@ def CDLBREAKAWAY_BatchState( int state , np.ndarray open not None , np.ndarray h
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLBREAKAWAY_StateFree( int state ):
+def CDLBREAKAWAY_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -3317,7 +3317,7 @@ def CDLBREAKAWAY_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLBREAKAWAY_StateSave( int state , int hFile ):
+def CDLBREAKAWAY_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -3335,7 +3335,7 @@ def CDLBREAKAWAY_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLBREAKAWAY_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLBREAKAWAY_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -3370,12 +3370,12 @@ def CDLCLOSINGMARUBOZU_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLCLOSINGMARUBOZU_StateInit(& _state)
     _ta_check_success("TA_CDLCLOSINGMARUBOZU_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLCLOSINGMARUBOZU_State( int state , double open , double high , double low , double close ):
+def CDLCLOSINGMARUBOZU_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -3387,7 +3387,7 @@ def CDLCLOSINGMARUBOZU_State( int state , double open , double high , double low
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLCLOSINGMARUBOZU_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLCLOSINGMARUBOZU_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLCLOSINGMARUBOZU_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -3413,7 +3413,7 @@ def CDLCLOSINGMARUBOZU_BatchState( int state , np.ndarray open not None , np.nda
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLCLOSINGMARUBOZU_StateFree( int state ):
+def CDLCLOSINGMARUBOZU_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -3424,7 +3424,7 @@ def CDLCLOSINGMARUBOZU_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLCLOSINGMARUBOZU_StateSave( int state , int hFile ):
+def CDLCLOSINGMARUBOZU_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -3442,7 +3442,7 @@ def CDLCLOSINGMARUBOZU_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLCLOSINGMARUBOZU_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLCLOSINGMARUBOZU_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -3477,12 +3477,12 @@ def CDLCONCEALBABYSWALL_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLCONCEALBABYSWALL_StateInit(& _state)
     _ta_check_success("TA_CDLCONCEALBABYSWALL_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLCONCEALBABYSWALL_State( int state , double open , double high , double low , double close ):
+def CDLCONCEALBABYSWALL_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -3494,7 +3494,7 @@ def CDLCONCEALBABYSWALL_State( int state , double open , double high , double lo
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLCONCEALBABYSWALL_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLCONCEALBABYSWALL_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLCONCEALBABYSWALL_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -3520,7 +3520,7 @@ def CDLCONCEALBABYSWALL_BatchState( int state , np.ndarray open not None , np.nd
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLCONCEALBABYSWALL_StateFree( int state ):
+def CDLCONCEALBABYSWALL_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -3531,7 +3531,7 @@ def CDLCONCEALBABYSWALL_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLCONCEALBABYSWALL_StateSave( int state , int hFile ):
+def CDLCONCEALBABYSWALL_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -3549,7 +3549,7 @@ def CDLCONCEALBABYSWALL_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLCONCEALBABYSWALL_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLCONCEALBABYSWALL_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -3584,12 +3584,12 @@ def CDLCOUNTERATTACK_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLCOUNTERATTACK_StateInit(& _state)
     _ta_check_success("TA_CDLCOUNTERATTACK_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLCOUNTERATTACK_State( int state , double open , double high , double low , double close ):
+def CDLCOUNTERATTACK_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -3601,7 +3601,7 @@ def CDLCOUNTERATTACK_State( int state , double open , double high , double low ,
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLCOUNTERATTACK_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLCOUNTERATTACK_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLCOUNTERATTACK_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -3627,7 +3627,7 @@ def CDLCOUNTERATTACK_BatchState( int state , np.ndarray open not None , np.ndarr
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLCOUNTERATTACK_StateFree( int state ):
+def CDLCOUNTERATTACK_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -3638,7 +3638,7 @@ def CDLCOUNTERATTACK_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLCOUNTERATTACK_StateSave( int state , int hFile ):
+def CDLCOUNTERATTACK_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -3656,7 +3656,7 @@ def CDLCOUNTERATTACK_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLCOUNTERATTACK_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLCOUNTERATTACK_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -3691,12 +3691,12 @@ def CDLDARKCLOUDCOVER_StateInit( double penetration=-4e37 ):
         TA_RetCode retCode
     retCode = lib.TA_CDLDARKCLOUDCOVER_StateInit(& _state, penetration)
     _ta_check_success("TA_CDLDARKCLOUDCOVER_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLDARKCLOUDCOVER_State( int state , double open , double high , double low , double close ):
+def CDLDARKCLOUDCOVER_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -3708,7 +3708,7 @@ def CDLDARKCLOUDCOVER_State( int state , double open , double high , double low 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLDARKCLOUDCOVER_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLDARKCLOUDCOVER_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLDARKCLOUDCOVER_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -3734,7 +3734,7 @@ def CDLDARKCLOUDCOVER_BatchState( int state , np.ndarray open not None , np.ndar
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLDARKCLOUDCOVER_StateFree( int state ):
+def CDLDARKCLOUDCOVER_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -3745,7 +3745,7 @@ def CDLDARKCLOUDCOVER_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLDARKCLOUDCOVER_StateSave( int state , int hFile ):
+def CDLDARKCLOUDCOVER_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -3763,7 +3763,7 @@ def CDLDARKCLOUDCOVER_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLDARKCLOUDCOVER_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLDARKCLOUDCOVER_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -3798,12 +3798,12 @@ def CDLDOJI_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLDOJI_StateInit(& _state)
     _ta_check_success("TA_CDLDOJI_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLDOJI_State( int state , double open , double high , double low , double close ):
+def CDLDOJI_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -3815,7 +3815,7 @@ def CDLDOJI_State( int state , double open , double high , double low , double c
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLDOJI_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLDOJI_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLDOJI_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -3841,7 +3841,7 @@ def CDLDOJI_BatchState( int state , np.ndarray open not None , np.ndarray high n
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLDOJI_StateFree( int state ):
+def CDLDOJI_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -3852,7 +3852,7 @@ def CDLDOJI_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLDOJI_StateSave( int state , int hFile ):
+def CDLDOJI_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -3870,7 +3870,7 @@ def CDLDOJI_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLDOJI_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLDOJI_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -3905,12 +3905,12 @@ def CDLDOJISTAR_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLDOJISTAR_StateInit(& _state)
     _ta_check_success("TA_CDLDOJISTAR_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLDOJISTAR_State( int state , double open , double high , double low , double close ):
+def CDLDOJISTAR_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -3922,7 +3922,7 @@ def CDLDOJISTAR_State( int state , double open , double high , double low , doub
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLDOJISTAR_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLDOJISTAR_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLDOJISTAR_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -3948,7 +3948,7 @@ def CDLDOJISTAR_BatchState( int state , np.ndarray open not None , np.ndarray hi
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLDOJISTAR_StateFree( int state ):
+def CDLDOJISTAR_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -3959,7 +3959,7 @@ def CDLDOJISTAR_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLDOJISTAR_StateSave( int state , int hFile ):
+def CDLDOJISTAR_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -3977,7 +3977,7 @@ def CDLDOJISTAR_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLDOJISTAR_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLDOJISTAR_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -4012,12 +4012,12 @@ def CDLDRAGONFLYDOJI_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLDRAGONFLYDOJI_StateInit(& _state)
     _ta_check_success("TA_CDLDRAGONFLYDOJI_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLDRAGONFLYDOJI_State( int state , double open , double high , double low , double close ):
+def CDLDRAGONFLYDOJI_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -4029,7 +4029,7 @@ def CDLDRAGONFLYDOJI_State( int state , double open , double high , double low ,
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLDRAGONFLYDOJI_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLDRAGONFLYDOJI_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLDRAGONFLYDOJI_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -4055,7 +4055,7 @@ def CDLDRAGONFLYDOJI_BatchState( int state , np.ndarray open not None , np.ndarr
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLDRAGONFLYDOJI_StateFree( int state ):
+def CDLDRAGONFLYDOJI_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -4066,7 +4066,7 @@ def CDLDRAGONFLYDOJI_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLDRAGONFLYDOJI_StateSave( int state , int hFile ):
+def CDLDRAGONFLYDOJI_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -4084,7 +4084,7 @@ def CDLDRAGONFLYDOJI_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLDRAGONFLYDOJI_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLDRAGONFLYDOJI_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -4119,12 +4119,12 @@ def CDLENGULFING_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLENGULFING_StateInit(& _state)
     _ta_check_success("TA_CDLENGULFING_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLENGULFING_State( int state , double open , double high , double low , double close ):
+def CDLENGULFING_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -4136,7 +4136,7 @@ def CDLENGULFING_State( int state , double open , double high , double low , dou
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLENGULFING_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLENGULFING_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLENGULFING_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -4162,7 +4162,7 @@ def CDLENGULFING_BatchState( int state , np.ndarray open not None , np.ndarray h
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLENGULFING_StateFree( int state ):
+def CDLENGULFING_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -4173,7 +4173,7 @@ def CDLENGULFING_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLENGULFING_StateSave( int state , int hFile ):
+def CDLENGULFING_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -4191,7 +4191,7 @@ def CDLENGULFING_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLENGULFING_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLENGULFING_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -4226,12 +4226,12 @@ def CDLEVENINGDOJISTAR_StateInit( double penetration=-4e37 ):
         TA_RetCode retCode
     retCode = lib.TA_CDLEVENINGDOJISTAR_StateInit(& _state, penetration)
     _ta_check_success("TA_CDLEVENINGDOJISTAR_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLEVENINGDOJISTAR_State( int state , double open , double high , double low , double close ):
+def CDLEVENINGDOJISTAR_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -4243,7 +4243,7 @@ def CDLEVENINGDOJISTAR_State( int state , double open , double high , double low
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLEVENINGDOJISTAR_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLEVENINGDOJISTAR_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLEVENINGDOJISTAR_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -4269,7 +4269,7 @@ def CDLEVENINGDOJISTAR_BatchState( int state , np.ndarray open not None , np.nda
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLEVENINGDOJISTAR_StateFree( int state ):
+def CDLEVENINGDOJISTAR_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -4280,7 +4280,7 @@ def CDLEVENINGDOJISTAR_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLEVENINGDOJISTAR_StateSave( int state , int hFile ):
+def CDLEVENINGDOJISTAR_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -4298,7 +4298,7 @@ def CDLEVENINGDOJISTAR_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLEVENINGDOJISTAR_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLEVENINGDOJISTAR_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -4333,12 +4333,12 @@ def CDLEVENINGSTAR_StateInit( double penetration=-4e37 ):
         TA_RetCode retCode
     retCode = lib.TA_CDLEVENINGSTAR_StateInit(& _state, penetration)
     _ta_check_success("TA_CDLEVENINGSTAR_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLEVENINGSTAR_State( int state , double open , double high , double low , double close ):
+def CDLEVENINGSTAR_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -4350,7 +4350,7 @@ def CDLEVENINGSTAR_State( int state , double open , double high , double low , d
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLEVENINGSTAR_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLEVENINGSTAR_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLEVENINGSTAR_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -4376,7 +4376,7 @@ def CDLEVENINGSTAR_BatchState( int state , np.ndarray open not None , np.ndarray
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLEVENINGSTAR_StateFree( int state ):
+def CDLEVENINGSTAR_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -4387,7 +4387,7 @@ def CDLEVENINGSTAR_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLEVENINGSTAR_StateSave( int state , int hFile ):
+def CDLEVENINGSTAR_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -4405,7 +4405,7 @@ def CDLEVENINGSTAR_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLEVENINGSTAR_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLEVENINGSTAR_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -4440,12 +4440,12 @@ def CDLGAPSIDESIDEWHITE_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLGAPSIDESIDEWHITE_StateInit(& _state)
     _ta_check_success("TA_CDLGAPSIDESIDEWHITE_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLGAPSIDESIDEWHITE_State( int state , double open , double high , double low , double close ):
+def CDLGAPSIDESIDEWHITE_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -4457,7 +4457,7 @@ def CDLGAPSIDESIDEWHITE_State( int state , double open , double high , double lo
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLGAPSIDESIDEWHITE_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLGAPSIDESIDEWHITE_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLGAPSIDESIDEWHITE_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -4483,7 +4483,7 @@ def CDLGAPSIDESIDEWHITE_BatchState( int state , np.ndarray open not None , np.nd
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLGAPSIDESIDEWHITE_StateFree( int state ):
+def CDLGAPSIDESIDEWHITE_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -4494,7 +4494,7 @@ def CDLGAPSIDESIDEWHITE_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLGAPSIDESIDEWHITE_StateSave( int state , int hFile ):
+def CDLGAPSIDESIDEWHITE_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -4512,7 +4512,7 @@ def CDLGAPSIDESIDEWHITE_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLGAPSIDESIDEWHITE_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLGAPSIDESIDEWHITE_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -4547,12 +4547,12 @@ def CDLGRAVESTONEDOJI_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLGRAVESTONEDOJI_StateInit(& _state)
     _ta_check_success("TA_CDLGRAVESTONEDOJI_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLGRAVESTONEDOJI_State( int state , double open , double high , double low , double close ):
+def CDLGRAVESTONEDOJI_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -4564,7 +4564,7 @@ def CDLGRAVESTONEDOJI_State( int state , double open , double high , double low 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLGRAVESTONEDOJI_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLGRAVESTONEDOJI_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLGRAVESTONEDOJI_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -4590,7 +4590,7 @@ def CDLGRAVESTONEDOJI_BatchState( int state , np.ndarray open not None , np.ndar
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLGRAVESTONEDOJI_StateFree( int state ):
+def CDLGRAVESTONEDOJI_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -4601,7 +4601,7 @@ def CDLGRAVESTONEDOJI_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLGRAVESTONEDOJI_StateSave( int state , int hFile ):
+def CDLGRAVESTONEDOJI_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -4619,7 +4619,7 @@ def CDLGRAVESTONEDOJI_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLGRAVESTONEDOJI_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLGRAVESTONEDOJI_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -4654,12 +4654,12 @@ def CDLHAMMER_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLHAMMER_StateInit(& _state)
     _ta_check_success("TA_CDLHAMMER_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHAMMER_State( int state , double open , double high , double low , double close ):
+def CDLHAMMER_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -4671,7 +4671,7 @@ def CDLHAMMER_State( int state , double open , double high , double low , double
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHAMMER_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLHAMMER_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLHAMMER_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -4697,7 +4697,7 @@ def CDLHAMMER_BatchState( int state , np.ndarray open not None , np.ndarray high
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHAMMER_StateFree( int state ):
+def CDLHAMMER_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -4708,7 +4708,7 @@ def CDLHAMMER_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHAMMER_StateSave( int state , int hFile ):
+def CDLHAMMER_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -4726,7 +4726,7 @@ def CDLHAMMER_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLHAMMER_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLHAMMER_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -4761,12 +4761,12 @@ def CDLHANGINGMAN_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLHANGINGMAN_StateInit(& _state)
     _ta_check_success("TA_CDLHANGINGMAN_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHANGINGMAN_State( int state , double open , double high , double low , double close ):
+def CDLHANGINGMAN_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -4778,7 +4778,7 @@ def CDLHANGINGMAN_State( int state , double open , double high , double low , do
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHANGINGMAN_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLHANGINGMAN_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLHANGINGMAN_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -4804,7 +4804,7 @@ def CDLHANGINGMAN_BatchState( int state , np.ndarray open not None , np.ndarray 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHANGINGMAN_StateFree( int state ):
+def CDLHANGINGMAN_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -4815,7 +4815,7 @@ def CDLHANGINGMAN_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHANGINGMAN_StateSave( int state , int hFile ):
+def CDLHANGINGMAN_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -4833,7 +4833,7 @@ def CDLHANGINGMAN_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLHANGINGMAN_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLHANGINGMAN_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -4868,12 +4868,12 @@ def CDLHARAMI_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLHARAMI_StateInit(& _state)
     _ta_check_success("TA_CDLHARAMI_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHARAMI_State( int state , double open , double high , double low , double close ):
+def CDLHARAMI_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -4885,7 +4885,7 @@ def CDLHARAMI_State( int state , double open , double high , double low , double
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHARAMI_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLHARAMI_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLHARAMI_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -4911,7 +4911,7 @@ def CDLHARAMI_BatchState( int state , np.ndarray open not None , np.ndarray high
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHARAMI_StateFree( int state ):
+def CDLHARAMI_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -4922,7 +4922,7 @@ def CDLHARAMI_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHARAMI_StateSave( int state , int hFile ):
+def CDLHARAMI_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -4940,7 +4940,7 @@ def CDLHARAMI_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLHARAMI_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLHARAMI_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -4975,12 +4975,12 @@ def CDLHARAMICROSS_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLHARAMICROSS_StateInit(& _state)
     _ta_check_success("TA_CDLHARAMICROSS_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHARAMICROSS_State( int state , double open , double high , double low , double close ):
+def CDLHARAMICROSS_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -4992,7 +4992,7 @@ def CDLHARAMICROSS_State( int state , double open , double high , double low , d
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHARAMICROSS_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLHARAMICROSS_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLHARAMICROSS_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -5018,7 +5018,7 @@ def CDLHARAMICROSS_BatchState( int state , np.ndarray open not None , np.ndarray
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHARAMICROSS_StateFree( int state ):
+def CDLHARAMICROSS_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -5029,7 +5029,7 @@ def CDLHARAMICROSS_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHARAMICROSS_StateSave( int state , int hFile ):
+def CDLHARAMICROSS_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -5047,7 +5047,7 @@ def CDLHARAMICROSS_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLHARAMICROSS_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLHARAMICROSS_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -5082,12 +5082,12 @@ def CDLHIGHWAVE_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLHIGHWAVE_StateInit(& _state)
     _ta_check_success("TA_CDLHIGHWAVE_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHIGHWAVE_State( int state , double open , double high , double low , double close ):
+def CDLHIGHWAVE_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -5099,7 +5099,7 @@ def CDLHIGHWAVE_State( int state , double open , double high , double low , doub
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHIGHWAVE_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLHIGHWAVE_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLHIGHWAVE_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -5125,7 +5125,7 @@ def CDLHIGHWAVE_BatchState( int state , np.ndarray open not None , np.ndarray hi
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHIGHWAVE_StateFree( int state ):
+def CDLHIGHWAVE_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -5136,7 +5136,7 @@ def CDLHIGHWAVE_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHIGHWAVE_StateSave( int state , int hFile ):
+def CDLHIGHWAVE_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -5154,7 +5154,7 @@ def CDLHIGHWAVE_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLHIGHWAVE_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLHIGHWAVE_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -5189,12 +5189,12 @@ def CDLHIKKAKE_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLHIKKAKE_StateInit(& _state)
     _ta_check_success("TA_CDLHIKKAKE_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHIKKAKE_State( int state , double open , double high , double low , double close ):
+def CDLHIKKAKE_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -5206,7 +5206,7 @@ def CDLHIKKAKE_State( int state , double open , double high , double low , doubl
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHIKKAKE_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLHIKKAKE_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLHIKKAKE_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -5232,7 +5232,7 @@ def CDLHIKKAKE_BatchState( int state , np.ndarray open not None , np.ndarray hig
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHIKKAKE_StateFree( int state ):
+def CDLHIKKAKE_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -5243,7 +5243,7 @@ def CDLHIKKAKE_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHIKKAKE_StateSave( int state , int hFile ):
+def CDLHIKKAKE_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -5261,7 +5261,7 @@ def CDLHIKKAKE_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLHIKKAKE_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLHIKKAKE_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -5296,12 +5296,12 @@ def CDLHIKKAKEMOD_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLHIKKAKEMOD_StateInit(& _state)
     _ta_check_success("TA_CDLHIKKAKEMOD_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHIKKAKEMOD_State( int state , double open , double high , double low , double close ):
+def CDLHIKKAKEMOD_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -5313,7 +5313,7 @@ def CDLHIKKAKEMOD_State( int state , double open , double high , double low , do
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHIKKAKEMOD_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLHIKKAKEMOD_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLHIKKAKEMOD_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -5339,7 +5339,7 @@ def CDLHIKKAKEMOD_BatchState( int state , np.ndarray open not None , np.ndarray 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHIKKAKEMOD_StateFree( int state ):
+def CDLHIKKAKEMOD_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -5350,7 +5350,7 @@ def CDLHIKKAKEMOD_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHIKKAKEMOD_StateSave( int state , int hFile ):
+def CDLHIKKAKEMOD_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -5368,7 +5368,7 @@ def CDLHIKKAKEMOD_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLHIKKAKEMOD_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLHIKKAKEMOD_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -5403,12 +5403,12 @@ def CDLHOMINGPIGEON_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLHOMINGPIGEON_StateInit(& _state)
     _ta_check_success("TA_CDLHOMINGPIGEON_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHOMINGPIGEON_State( int state , double open , double high , double low , double close ):
+def CDLHOMINGPIGEON_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -5420,7 +5420,7 @@ def CDLHOMINGPIGEON_State( int state , double open , double high , double low , 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHOMINGPIGEON_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLHOMINGPIGEON_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLHOMINGPIGEON_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -5446,7 +5446,7 @@ def CDLHOMINGPIGEON_BatchState( int state , np.ndarray open not None , np.ndarra
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHOMINGPIGEON_StateFree( int state ):
+def CDLHOMINGPIGEON_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -5457,7 +5457,7 @@ def CDLHOMINGPIGEON_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLHOMINGPIGEON_StateSave( int state , int hFile ):
+def CDLHOMINGPIGEON_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -5475,7 +5475,7 @@ def CDLHOMINGPIGEON_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLHOMINGPIGEON_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLHOMINGPIGEON_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -5510,12 +5510,12 @@ def CDLIDENTICAL3CROWS_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLIDENTICAL3CROWS_StateInit(& _state)
     _ta_check_success("TA_CDLIDENTICAL3CROWS_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLIDENTICAL3CROWS_State( int state , double open , double high , double low , double close ):
+def CDLIDENTICAL3CROWS_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -5527,7 +5527,7 @@ def CDLIDENTICAL3CROWS_State( int state , double open , double high , double low
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLIDENTICAL3CROWS_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLIDENTICAL3CROWS_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLIDENTICAL3CROWS_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -5553,7 +5553,7 @@ def CDLIDENTICAL3CROWS_BatchState( int state , np.ndarray open not None , np.nda
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLIDENTICAL3CROWS_StateFree( int state ):
+def CDLIDENTICAL3CROWS_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -5564,7 +5564,7 @@ def CDLIDENTICAL3CROWS_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLIDENTICAL3CROWS_StateSave( int state , int hFile ):
+def CDLIDENTICAL3CROWS_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -5582,7 +5582,7 @@ def CDLIDENTICAL3CROWS_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLIDENTICAL3CROWS_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLIDENTICAL3CROWS_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -5617,12 +5617,12 @@ def CDLINNECK_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLINNECK_StateInit(& _state)
     _ta_check_success("TA_CDLINNECK_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLINNECK_State( int state , double open , double high , double low , double close ):
+def CDLINNECK_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -5634,7 +5634,7 @@ def CDLINNECK_State( int state , double open , double high , double low , double
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLINNECK_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLINNECK_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLINNECK_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -5660,7 +5660,7 @@ def CDLINNECK_BatchState( int state , np.ndarray open not None , np.ndarray high
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLINNECK_StateFree( int state ):
+def CDLINNECK_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -5671,7 +5671,7 @@ def CDLINNECK_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLINNECK_StateSave( int state , int hFile ):
+def CDLINNECK_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -5689,7 +5689,7 @@ def CDLINNECK_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLINNECK_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLINNECK_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -5724,12 +5724,12 @@ def CDLINVERTEDHAMMER_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLINVERTEDHAMMER_StateInit(& _state)
     _ta_check_success("TA_CDLINVERTEDHAMMER_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLINVERTEDHAMMER_State( int state , double open , double high , double low , double close ):
+def CDLINVERTEDHAMMER_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -5741,7 +5741,7 @@ def CDLINVERTEDHAMMER_State( int state , double open , double high , double low 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLINVERTEDHAMMER_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLINVERTEDHAMMER_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLINVERTEDHAMMER_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -5767,7 +5767,7 @@ def CDLINVERTEDHAMMER_BatchState( int state , np.ndarray open not None , np.ndar
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLINVERTEDHAMMER_StateFree( int state ):
+def CDLINVERTEDHAMMER_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -5778,7 +5778,7 @@ def CDLINVERTEDHAMMER_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLINVERTEDHAMMER_StateSave( int state , int hFile ):
+def CDLINVERTEDHAMMER_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -5796,7 +5796,7 @@ def CDLINVERTEDHAMMER_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLINVERTEDHAMMER_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLINVERTEDHAMMER_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -5831,12 +5831,12 @@ def CDLKICKING_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLKICKING_StateInit(& _state)
     _ta_check_success("TA_CDLKICKING_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLKICKING_State( int state , double open , double high , double low , double close ):
+def CDLKICKING_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -5848,7 +5848,7 @@ def CDLKICKING_State( int state , double open , double high , double low , doubl
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLKICKING_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLKICKING_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLKICKING_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -5874,7 +5874,7 @@ def CDLKICKING_BatchState( int state , np.ndarray open not None , np.ndarray hig
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLKICKING_StateFree( int state ):
+def CDLKICKING_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -5885,7 +5885,7 @@ def CDLKICKING_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLKICKING_StateSave( int state , int hFile ):
+def CDLKICKING_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -5903,7 +5903,7 @@ def CDLKICKING_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLKICKING_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLKICKING_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -5938,12 +5938,12 @@ def CDLKICKINGBYLENGTH_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLKICKINGBYLENGTH_StateInit(& _state)
     _ta_check_success("TA_CDLKICKINGBYLENGTH_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLKICKINGBYLENGTH_State( int state , double open , double high , double low , double close ):
+def CDLKICKINGBYLENGTH_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -5955,7 +5955,7 @@ def CDLKICKINGBYLENGTH_State( int state , double open , double high , double low
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLKICKINGBYLENGTH_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLKICKINGBYLENGTH_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLKICKINGBYLENGTH_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -5981,7 +5981,7 @@ def CDLKICKINGBYLENGTH_BatchState( int state , np.ndarray open not None , np.nda
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLKICKINGBYLENGTH_StateFree( int state ):
+def CDLKICKINGBYLENGTH_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -5992,7 +5992,7 @@ def CDLKICKINGBYLENGTH_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLKICKINGBYLENGTH_StateSave( int state , int hFile ):
+def CDLKICKINGBYLENGTH_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -6010,7 +6010,7 @@ def CDLKICKINGBYLENGTH_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLKICKINGBYLENGTH_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLKICKINGBYLENGTH_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -6045,12 +6045,12 @@ def CDLLADDERBOTTOM_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLLADDERBOTTOM_StateInit(& _state)
     _ta_check_success("TA_CDLLADDERBOTTOM_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLLADDERBOTTOM_State( int state , double open , double high , double low , double close ):
+def CDLLADDERBOTTOM_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -6062,7 +6062,7 @@ def CDLLADDERBOTTOM_State( int state , double open , double high , double low , 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLLADDERBOTTOM_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLLADDERBOTTOM_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLLADDERBOTTOM_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -6088,7 +6088,7 @@ def CDLLADDERBOTTOM_BatchState( int state , np.ndarray open not None , np.ndarra
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLLADDERBOTTOM_StateFree( int state ):
+def CDLLADDERBOTTOM_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -6099,7 +6099,7 @@ def CDLLADDERBOTTOM_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLLADDERBOTTOM_StateSave( int state , int hFile ):
+def CDLLADDERBOTTOM_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -6117,7 +6117,7 @@ def CDLLADDERBOTTOM_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLLADDERBOTTOM_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLLADDERBOTTOM_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -6152,12 +6152,12 @@ def CDLLONGLEGGEDDOJI_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLLONGLEGGEDDOJI_StateInit(& _state)
     _ta_check_success("TA_CDLLONGLEGGEDDOJI_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLLONGLEGGEDDOJI_State( int state , double open , double high , double low , double close ):
+def CDLLONGLEGGEDDOJI_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -6169,7 +6169,7 @@ def CDLLONGLEGGEDDOJI_State( int state , double open , double high , double low 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLLONGLEGGEDDOJI_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLLONGLEGGEDDOJI_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLLONGLEGGEDDOJI_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -6195,7 +6195,7 @@ def CDLLONGLEGGEDDOJI_BatchState( int state , np.ndarray open not None , np.ndar
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLLONGLEGGEDDOJI_StateFree( int state ):
+def CDLLONGLEGGEDDOJI_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -6206,7 +6206,7 @@ def CDLLONGLEGGEDDOJI_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLLONGLEGGEDDOJI_StateSave( int state , int hFile ):
+def CDLLONGLEGGEDDOJI_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -6224,7 +6224,7 @@ def CDLLONGLEGGEDDOJI_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLLONGLEGGEDDOJI_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLLONGLEGGEDDOJI_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -6259,12 +6259,12 @@ def CDLLONGLINE_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLLONGLINE_StateInit(& _state)
     _ta_check_success("TA_CDLLONGLINE_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLLONGLINE_State( int state , double open , double high , double low , double close ):
+def CDLLONGLINE_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -6276,7 +6276,7 @@ def CDLLONGLINE_State( int state , double open , double high , double low , doub
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLLONGLINE_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLLONGLINE_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLLONGLINE_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -6302,7 +6302,7 @@ def CDLLONGLINE_BatchState( int state , np.ndarray open not None , np.ndarray hi
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLLONGLINE_StateFree( int state ):
+def CDLLONGLINE_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -6313,7 +6313,7 @@ def CDLLONGLINE_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLLONGLINE_StateSave( int state , int hFile ):
+def CDLLONGLINE_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -6331,7 +6331,7 @@ def CDLLONGLINE_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLLONGLINE_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLLONGLINE_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -6366,12 +6366,12 @@ def CDLMARUBOZU_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLMARUBOZU_StateInit(& _state)
     _ta_check_success("TA_CDLMARUBOZU_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLMARUBOZU_State( int state , double open , double high , double low , double close ):
+def CDLMARUBOZU_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -6383,7 +6383,7 @@ def CDLMARUBOZU_State( int state , double open , double high , double low , doub
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLMARUBOZU_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLMARUBOZU_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLMARUBOZU_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -6409,7 +6409,7 @@ def CDLMARUBOZU_BatchState( int state , np.ndarray open not None , np.ndarray hi
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLMARUBOZU_StateFree( int state ):
+def CDLMARUBOZU_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -6420,7 +6420,7 @@ def CDLMARUBOZU_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLMARUBOZU_StateSave( int state , int hFile ):
+def CDLMARUBOZU_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -6438,7 +6438,7 @@ def CDLMARUBOZU_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLMARUBOZU_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLMARUBOZU_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -6473,12 +6473,12 @@ def CDLMATCHINGLOW_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLMATCHINGLOW_StateInit(& _state)
     _ta_check_success("TA_CDLMATCHINGLOW_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLMATCHINGLOW_State( int state , double open , double high , double low , double close ):
+def CDLMATCHINGLOW_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -6490,7 +6490,7 @@ def CDLMATCHINGLOW_State( int state , double open , double high , double low , d
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLMATCHINGLOW_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLMATCHINGLOW_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLMATCHINGLOW_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -6516,7 +6516,7 @@ def CDLMATCHINGLOW_BatchState( int state , np.ndarray open not None , np.ndarray
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLMATCHINGLOW_StateFree( int state ):
+def CDLMATCHINGLOW_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -6527,7 +6527,7 @@ def CDLMATCHINGLOW_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLMATCHINGLOW_StateSave( int state , int hFile ):
+def CDLMATCHINGLOW_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -6545,7 +6545,7 @@ def CDLMATCHINGLOW_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLMATCHINGLOW_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLMATCHINGLOW_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -6580,12 +6580,12 @@ def CDLMATHOLD_StateInit( double penetration=-4e37 ):
         TA_RetCode retCode
     retCode = lib.TA_CDLMATHOLD_StateInit(& _state, penetration)
     _ta_check_success("TA_CDLMATHOLD_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLMATHOLD_State( int state , double open , double high , double low , double close ):
+def CDLMATHOLD_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -6597,7 +6597,7 @@ def CDLMATHOLD_State( int state , double open , double high , double low , doubl
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLMATHOLD_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLMATHOLD_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLMATHOLD_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -6623,7 +6623,7 @@ def CDLMATHOLD_BatchState( int state , np.ndarray open not None , np.ndarray hig
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLMATHOLD_StateFree( int state ):
+def CDLMATHOLD_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -6634,7 +6634,7 @@ def CDLMATHOLD_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLMATHOLD_StateSave( int state , int hFile ):
+def CDLMATHOLD_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -6652,7 +6652,7 @@ def CDLMATHOLD_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLMATHOLD_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLMATHOLD_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -6687,12 +6687,12 @@ def CDLMORNINGDOJISTAR_StateInit( double penetration=-4e37 ):
         TA_RetCode retCode
     retCode = lib.TA_CDLMORNINGDOJISTAR_StateInit(& _state, penetration)
     _ta_check_success("TA_CDLMORNINGDOJISTAR_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLMORNINGDOJISTAR_State( int state , double open , double high , double low , double close ):
+def CDLMORNINGDOJISTAR_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -6704,7 +6704,7 @@ def CDLMORNINGDOJISTAR_State( int state , double open , double high , double low
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLMORNINGDOJISTAR_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLMORNINGDOJISTAR_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLMORNINGDOJISTAR_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -6730,7 +6730,7 @@ def CDLMORNINGDOJISTAR_BatchState( int state , np.ndarray open not None , np.nda
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLMORNINGDOJISTAR_StateFree( int state ):
+def CDLMORNINGDOJISTAR_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -6741,7 +6741,7 @@ def CDLMORNINGDOJISTAR_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLMORNINGDOJISTAR_StateSave( int state , int hFile ):
+def CDLMORNINGDOJISTAR_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -6759,7 +6759,7 @@ def CDLMORNINGDOJISTAR_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLMORNINGDOJISTAR_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLMORNINGDOJISTAR_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -6794,12 +6794,12 @@ def CDLMORNINGSTAR_StateInit( double penetration=-4e37 ):
         TA_RetCode retCode
     retCode = lib.TA_CDLMORNINGSTAR_StateInit(& _state, penetration)
     _ta_check_success("TA_CDLMORNINGSTAR_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLMORNINGSTAR_State( int state , double open , double high , double low , double close ):
+def CDLMORNINGSTAR_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -6811,7 +6811,7 @@ def CDLMORNINGSTAR_State( int state , double open , double high , double low , d
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLMORNINGSTAR_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLMORNINGSTAR_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLMORNINGSTAR_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -6837,7 +6837,7 @@ def CDLMORNINGSTAR_BatchState( int state , np.ndarray open not None , np.ndarray
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLMORNINGSTAR_StateFree( int state ):
+def CDLMORNINGSTAR_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -6848,7 +6848,7 @@ def CDLMORNINGSTAR_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLMORNINGSTAR_StateSave( int state , int hFile ):
+def CDLMORNINGSTAR_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -6866,7 +6866,7 @@ def CDLMORNINGSTAR_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLMORNINGSTAR_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLMORNINGSTAR_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -6901,12 +6901,12 @@ def CDLONNECK_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLONNECK_StateInit(& _state)
     _ta_check_success("TA_CDLONNECK_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLONNECK_State( int state , double open , double high , double low , double close ):
+def CDLONNECK_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -6918,7 +6918,7 @@ def CDLONNECK_State( int state , double open , double high , double low , double
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLONNECK_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLONNECK_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLONNECK_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -6944,7 +6944,7 @@ def CDLONNECK_BatchState( int state , np.ndarray open not None , np.ndarray high
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLONNECK_StateFree( int state ):
+def CDLONNECK_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -6955,7 +6955,7 @@ def CDLONNECK_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLONNECK_StateSave( int state , int hFile ):
+def CDLONNECK_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -6973,7 +6973,7 @@ def CDLONNECK_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLONNECK_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLONNECK_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -7008,12 +7008,12 @@ def CDLPIERCING_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLPIERCING_StateInit(& _state)
     _ta_check_success("TA_CDLPIERCING_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLPIERCING_State( int state , double open , double high , double low , double close ):
+def CDLPIERCING_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -7025,7 +7025,7 @@ def CDLPIERCING_State( int state , double open , double high , double low , doub
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLPIERCING_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLPIERCING_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLPIERCING_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -7051,7 +7051,7 @@ def CDLPIERCING_BatchState( int state , np.ndarray open not None , np.ndarray hi
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLPIERCING_StateFree( int state ):
+def CDLPIERCING_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -7062,7 +7062,7 @@ def CDLPIERCING_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLPIERCING_StateSave( int state , int hFile ):
+def CDLPIERCING_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -7080,7 +7080,7 @@ def CDLPIERCING_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLPIERCING_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLPIERCING_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -7115,12 +7115,12 @@ def CDLRICKSHAWMAN_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLRICKSHAWMAN_StateInit(& _state)
     _ta_check_success("TA_CDLRICKSHAWMAN_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLRICKSHAWMAN_State( int state , double open , double high , double low , double close ):
+def CDLRICKSHAWMAN_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -7132,7 +7132,7 @@ def CDLRICKSHAWMAN_State( int state , double open , double high , double low , d
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLRICKSHAWMAN_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLRICKSHAWMAN_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLRICKSHAWMAN_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -7158,7 +7158,7 @@ def CDLRICKSHAWMAN_BatchState( int state , np.ndarray open not None , np.ndarray
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLRICKSHAWMAN_StateFree( int state ):
+def CDLRICKSHAWMAN_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -7169,7 +7169,7 @@ def CDLRICKSHAWMAN_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLRICKSHAWMAN_StateSave( int state , int hFile ):
+def CDLRICKSHAWMAN_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -7187,7 +7187,7 @@ def CDLRICKSHAWMAN_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLRICKSHAWMAN_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLRICKSHAWMAN_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -7222,12 +7222,12 @@ def CDLRISEFALL3METHODS_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLRISEFALL3METHODS_StateInit(& _state)
     _ta_check_success("TA_CDLRISEFALL3METHODS_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLRISEFALL3METHODS_State( int state , double open , double high , double low , double close ):
+def CDLRISEFALL3METHODS_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -7239,7 +7239,7 @@ def CDLRISEFALL3METHODS_State( int state , double open , double high , double lo
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLRISEFALL3METHODS_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLRISEFALL3METHODS_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLRISEFALL3METHODS_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -7265,7 +7265,7 @@ def CDLRISEFALL3METHODS_BatchState( int state , np.ndarray open not None , np.nd
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLRISEFALL3METHODS_StateFree( int state ):
+def CDLRISEFALL3METHODS_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -7276,7 +7276,7 @@ def CDLRISEFALL3METHODS_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLRISEFALL3METHODS_StateSave( int state , int hFile ):
+def CDLRISEFALL3METHODS_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -7294,7 +7294,7 @@ def CDLRISEFALL3METHODS_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLRISEFALL3METHODS_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLRISEFALL3METHODS_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -7329,12 +7329,12 @@ def CDLSEPARATINGLINES_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLSEPARATINGLINES_StateInit(& _state)
     _ta_check_success("TA_CDLSEPARATINGLINES_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLSEPARATINGLINES_State( int state , double open , double high , double low , double close ):
+def CDLSEPARATINGLINES_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -7346,7 +7346,7 @@ def CDLSEPARATINGLINES_State( int state , double open , double high , double low
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLSEPARATINGLINES_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLSEPARATINGLINES_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLSEPARATINGLINES_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -7372,7 +7372,7 @@ def CDLSEPARATINGLINES_BatchState( int state , np.ndarray open not None , np.nda
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLSEPARATINGLINES_StateFree( int state ):
+def CDLSEPARATINGLINES_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -7383,7 +7383,7 @@ def CDLSEPARATINGLINES_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLSEPARATINGLINES_StateSave( int state , int hFile ):
+def CDLSEPARATINGLINES_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -7401,7 +7401,7 @@ def CDLSEPARATINGLINES_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLSEPARATINGLINES_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLSEPARATINGLINES_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -7436,12 +7436,12 @@ def CDLSHOOTINGSTAR_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLSHOOTINGSTAR_StateInit(& _state)
     _ta_check_success("TA_CDLSHOOTINGSTAR_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLSHOOTINGSTAR_State( int state , double open , double high , double low , double close ):
+def CDLSHOOTINGSTAR_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -7453,7 +7453,7 @@ def CDLSHOOTINGSTAR_State( int state , double open , double high , double low , 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLSHOOTINGSTAR_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLSHOOTINGSTAR_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLSHOOTINGSTAR_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -7479,7 +7479,7 @@ def CDLSHOOTINGSTAR_BatchState( int state , np.ndarray open not None , np.ndarra
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLSHOOTINGSTAR_StateFree( int state ):
+def CDLSHOOTINGSTAR_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -7490,7 +7490,7 @@ def CDLSHOOTINGSTAR_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLSHOOTINGSTAR_StateSave( int state , int hFile ):
+def CDLSHOOTINGSTAR_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -7508,7 +7508,7 @@ def CDLSHOOTINGSTAR_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLSHOOTINGSTAR_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLSHOOTINGSTAR_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -7543,12 +7543,12 @@ def CDLSHORTLINE_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLSHORTLINE_StateInit(& _state)
     _ta_check_success("TA_CDLSHORTLINE_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLSHORTLINE_State( int state , double open , double high , double low , double close ):
+def CDLSHORTLINE_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -7560,7 +7560,7 @@ def CDLSHORTLINE_State( int state , double open , double high , double low , dou
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLSHORTLINE_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLSHORTLINE_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLSHORTLINE_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -7586,7 +7586,7 @@ def CDLSHORTLINE_BatchState( int state , np.ndarray open not None , np.ndarray h
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLSHORTLINE_StateFree( int state ):
+def CDLSHORTLINE_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -7597,7 +7597,7 @@ def CDLSHORTLINE_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLSHORTLINE_StateSave( int state , int hFile ):
+def CDLSHORTLINE_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -7615,7 +7615,7 @@ def CDLSHORTLINE_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLSHORTLINE_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLSHORTLINE_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -7650,12 +7650,12 @@ def CDLSPINNINGTOP_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLSPINNINGTOP_StateInit(& _state)
     _ta_check_success("TA_CDLSPINNINGTOP_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLSPINNINGTOP_State( int state , double open , double high , double low , double close ):
+def CDLSPINNINGTOP_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -7667,7 +7667,7 @@ def CDLSPINNINGTOP_State( int state , double open , double high , double low , d
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLSPINNINGTOP_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLSPINNINGTOP_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLSPINNINGTOP_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -7693,7 +7693,7 @@ def CDLSPINNINGTOP_BatchState( int state , np.ndarray open not None , np.ndarray
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLSPINNINGTOP_StateFree( int state ):
+def CDLSPINNINGTOP_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -7704,7 +7704,7 @@ def CDLSPINNINGTOP_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLSPINNINGTOP_StateSave( int state , int hFile ):
+def CDLSPINNINGTOP_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -7722,7 +7722,7 @@ def CDLSPINNINGTOP_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLSPINNINGTOP_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLSPINNINGTOP_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -7757,12 +7757,12 @@ def CDLSTALLEDPATTERN_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLSTALLEDPATTERN_StateInit(& _state)
     _ta_check_success("TA_CDLSTALLEDPATTERN_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLSTALLEDPATTERN_State( int state , double open , double high , double low , double close ):
+def CDLSTALLEDPATTERN_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -7774,7 +7774,7 @@ def CDLSTALLEDPATTERN_State( int state , double open , double high , double low 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLSTALLEDPATTERN_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLSTALLEDPATTERN_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLSTALLEDPATTERN_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -7800,7 +7800,7 @@ def CDLSTALLEDPATTERN_BatchState( int state , np.ndarray open not None , np.ndar
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLSTALLEDPATTERN_StateFree( int state ):
+def CDLSTALLEDPATTERN_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -7811,7 +7811,7 @@ def CDLSTALLEDPATTERN_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLSTALLEDPATTERN_StateSave( int state , int hFile ):
+def CDLSTALLEDPATTERN_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -7829,7 +7829,7 @@ def CDLSTALLEDPATTERN_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLSTALLEDPATTERN_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLSTALLEDPATTERN_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -7864,12 +7864,12 @@ def CDLSTICKSANDWICH_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLSTICKSANDWICH_StateInit(& _state)
     _ta_check_success("TA_CDLSTICKSANDWICH_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLSTICKSANDWICH_State( int state , double open , double high , double low , double close ):
+def CDLSTICKSANDWICH_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -7881,7 +7881,7 @@ def CDLSTICKSANDWICH_State( int state , double open , double high , double low ,
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLSTICKSANDWICH_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLSTICKSANDWICH_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLSTICKSANDWICH_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -7907,7 +7907,7 @@ def CDLSTICKSANDWICH_BatchState( int state , np.ndarray open not None , np.ndarr
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLSTICKSANDWICH_StateFree( int state ):
+def CDLSTICKSANDWICH_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -7918,7 +7918,7 @@ def CDLSTICKSANDWICH_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLSTICKSANDWICH_StateSave( int state , int hFile ):
+def CDLSTICKSANDWICH_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -7936,7 +7936,7 @@ def CDLSTICKSANDWICH_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLSTICKSANDWICH_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLSTICKSANDWICH_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -7971,12 +7971,12 @@ def CDLTAKURI_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLTAKURI_StateInit(& _state)
     _ta_check_success("TA_CDLTAKURI_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLTAKURI_State( int state , double open , double high , double low , double close ):
+def CDLTAKURI_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -7988,7 +7988,7 @@ def CDLTAKURI_State( int state , double open , double high , double low , double
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLTAKURI_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLTAKURI_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLTAKURI_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -8014,7 +8014,7 @@ def CDLTAKURI_BatchState( int state , np.ndarray open not None , np.ndarray high
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLTAKURI_StateFree( int state ):
+def CDLTAKURI_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -8025,7 +8025,7 @@ def CDLTAKURI_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLTAKURI_StateSave( int state , int hFile ):
+def CDLTAKURI_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -8043,7 +8043,7 @@ def CDLTAKURI_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLTAKURI_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLTAKURI_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -8078,12 +8078,12 @@ def CDLTASUKIGAP_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLTASUKIGAP_StateInit(& _state)
     _ta_check_success("TA_CDLTASUKIGAP_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLTASUKIGAP_State( int state , double open , double high , double low , double close ):
+def CDLTASUKIGAP_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -8095,7 +8095,7 @@ def CDLTASUKIGAP_State( int state , double open , double high , double low , dou
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLTASUKIGAP_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLTASUKIGAP_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLTASUKIGAP_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -8121,7 +8121,7 @@ def CDLTASUKIGAP_BatchState( int state , np.ndarray open not None , np.ndarray h
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLTASUKIGAP_StateFree( int state ):
+def CDLTASUKIGAP_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -8132,7 +8132,7 @@ def CDLTASUKIGAP_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLTASUKIGAP_StateSave( int state , int hFile ):
+def CDLTASUKIGAP_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -8150,7 +8150,7 @@ def CDLTASUKIGAP_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLTASUKIGAP_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLTASUKIGAP_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -8185,12 +8185,12 @@ def CDLTHRUSTING_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLTHRUSTING_StateInit(& _state)
     _ta_check_success("TA_CDLTHRUSTING_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLTHRUSTING_State( int state , double open , double high , double low , double close ):
+def CDLTHRUSTING_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -8202,7 +8202,7 @@ def CDLTHRUSTING_State( int state , double open , double high , double low , dou
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLTHRUSTING_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLTHRUSTING_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLTHRUSTING_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -8228,7 +8228,7 @@ def CDLTHRUSTING_BatchState( int state , np.ndarray open not None , np.ndarray h
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLTHRUSTING_StateFree( int state ):
+def CDLTHRUSTING_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -8239,7 +8239,7 @@ def CDLTHRUSTING_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLTHRUSTING_StateSave( int state , int hFile ):
+def CDLTHRUSTING_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -8257,7 +8257,7 @@ def CDLTHRUSTING_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLTHRUSTING_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLTHRUSTING_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -8292,12 +8292,12 @@ def CDLTRISTAR_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLTRISTAR_StateInit(& _state)
     _ta_check_success("TA_CDLTRISTAR_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLTRISTAR_State( int state , double open , double high , double low , double close ):
+def CDLTRISTAR_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -8309,7 +8309,7 @@ def CDLTRISTAR_State( int state , double open , double high , double low , doubl
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLTRISTAR_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLTRISTAR_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLTRISTAR_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -8335,7 +8335,7 @@ def CDLTRISTAR_BatchState( int state , np.ndarray open not None , np.ndarray hig
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLTRISTAR_StateFree( int state ):
+def CDLTRISTAR_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -8346,7 +8346,7 @@ def CDLTRISTAR_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLTRISTAR_StateSave( int state , int hFile ):
+def CDLTRISTAR_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -8364,7 +8364,7 @@ def CDLTRISTAR_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLTRISTAR_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLTRISTAR_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -8399,12 +8399,12 @@ def CDLUNIQUE3RIVER_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLUNIQUE3RIVER_StateInit(& _state)
     _ta_check_success("TA_CDLUNIQUE3RIVER_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLUNIQUE3RIVER_State( int state , double open , double high , double low , double close ):
+def CDLUNIQUE3RIVER_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -8416,7 +8416,7 @@ def CDLUNIQUE3RIVER_State( int state , double open , double high , double low , 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLUNIQUE3RIVER_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLUNIQUE3RIVER_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLUNIQUE3RIVER_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -8442,7 +8442,7 @@ def CDLUNIQUE3RIVER_BatchState( int state , np.ndarray open not None , np.ndarra
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLUNIQUE3RIVER_StateFree( int state ):
+def CDLUNIQUE3RIVER_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -8453,7 +8453,7 @@ def CDLUNIQUE3RIVER_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLUNIQUE3RIVER_StateSave( int state , int hFile ):
+def CDLUNIQUE3RIVER_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -8471,7 +8471,7 @@ def CDLUNIQUE3RIVER_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLUNIQUE3RIVER_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLUNIQUE3RIVER_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -8506,12 +8506,12 @@ def CDLUPSIDEGAP2CROWS_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLUPSIDEGAP2CROWS_StateInit(& _state)
     _ta_check_success("TA_CDLUPSIDEGAP2CROWS_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLUPSIDEGAP2CROWS_State( int state , double open , double high , double low , double close ):
+def CDLUPSIDEGAP2CROWS_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -8523,7 +8523,7 @@ def CDLUPSIDEGAP2CROWS_State( int state , double open , double high , double low
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLUPSIDEGAP2CROWS_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLUPSIDEGAP2CROWS_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLUPSIDEGAP2CROWS_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -8549,7 +8549,7 @@ def CDLUPSIDEGAP2CROWS_BatchState( int state , np.ndarray open not None , np.nda
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLUPSIDEGAP2CROWS_StateFree( int state ):
+def CDLUPSIDEGAP2CROWS_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -8560,7 +8560,7 @@ def CDLUPSIDEGAP2CROWS_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLUPSIDEGAP2CROWS_StateSave( int state , int hFile ):
+def CDLUPSIDEGAP2CROWS_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -8578,7 +8578,7 @@ def CDLUPSIDEGAP2CROWS_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLUPSIDEGAP2CROWS_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLUPSIDEGAP2CROWS_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -8613,12 +8613,12 @@ def CDLXSIDEGAP3METHODS_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CDLXSIDEGAP3METHODS_StateInit(& _state)
     _ta_check_success("TA_CDLXSIDEGAP3METHODS_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLXSIDEGAP3METHODS_State( int state , double open , double high , double low , double close ):
+def CDLXSIDEGAP3METHODS_State( size_t state , double open , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -8630,7 +8630,7 @@ def CDLXSIDEGAP3METHODS_State( int state , double open , double high , double lo
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLXSIDEGAP3METHODS_BatchState( int state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def CDLXSIDEGAP3METHODS_BatchState( size_t state , np.ndarray open not None , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ CDLXSIDEGAP3METHODS_BatchState(open, high, low, close)"""
     cdef:
         void * _state;
@@ -8656,7 +8656,7 @@ def CDLXSIDEGAP3METHODS_BatchState( int state , np.ndarray open not None , np.nd
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLXSIDEGAP3METHODS_StateFree( int state ):
+def CDLXSIDEGAP3METHODS_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -8667,7 +8667,7 @@ def CDLXSIDEGAP3METHODS_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CDLXSIDEGAP3METHODS_StateSave( int state , int hFile ):
+def CDLXSIDEGAP3METHODS_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -8685,7 +8685,7 @@ def CDLXSIDEGAP3METHODS_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CDLXSIDEGAP3METHODS_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CDLXSIDEGAP3METHODS_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -8717,12 +8717,12 @@ def CEIL_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_CEIL_StateInit(& _state)
     _ta_check_success("TA_CEIL_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CEIL_State( int state , double real ):
+def CEIL_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -8734,7 +8734,7 @@ def CEIL_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CEIL_BatchState( int state , np.ndarray real not None ):
+def CEIL_BatchState( size_t state , np.ndarray real not None ):
     """ CEIL_BatchState(real)"""
     cdef:
         void * _state;
@@ -8757,7 +8757,7 @@ def CEIL_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CEIL_StateFree( int state ):
+def CEIL_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -8768,7 +8768,7 @@ def CEIL_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CEIL_StateSave( int state , int hFile ):
+def CEIL_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -8786,7 +8786,7 @@ def CEIL_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CEIL_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CEIL_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -8818,12 +8818,12 @@ def CMO_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_CMO_StateInit(& _state, timeperiod)
     _ta_check_success("TA_CMO_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CMO_State( int state , double real ):
+def CMO_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -8835,7 +8835,7 @@ def CMO_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CMO_BatchState( int state , np.ndarray real not None ):
+def CMO_BatchState( size_t state , np.ndarray real not None ):
     """ CMO_BatchState(real)"""
     cdef:
         void * _state;
@@ -8858,7 +8858,7 @@ def CMO_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CMO_StateFree( int state ):
+def CMO_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -8869,7 +8869,7 @@ def CMO_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CMO_StateSave( int state , int hFile ):
+def CMO_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -8887,7 +8887,7 @@ def CMO_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CMO_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CMO_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -8920,12 +8920,12 @@ def CORREL_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_CORREL_StateInit(& _state, timeperiod)
     _ta_check_success("TA_CORREL_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CORREL_State( int state , double real0 , double real1 ):
+def CORREL_State( size_t state , double real0 , double real1 ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -8937,7 +8937,7 @@ def CORREL_State( int state , double real0 , double real1 ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CORREL_BatchState( int state , np.ndarray real0 not None , np.ndarray real1 not None ):
+def CORREL_BatchState( size_t state , np.ndarray real0 not None , np.ndarray real1 not None ):
     """ CORREL_BatchState(real0, real1)"""
     cdef:
         void * _state;
@@ -8961,7 +8961,7 @@ def CORREL_BatchState( int state , np.ndarray real0 not None , np.ndarray real1 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CORREL_StateFree( int state ):
+def CORREL_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -8972,7 +8972,7 @@ def CORREL_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def CORREL_StateSave( int state , int hFile ):
+def CORREL_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -8990,7 +8990,7 @@ def CORREL_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_CORREL_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_CORREL_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -9022,12 +9022,12 @@ def COS_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_COS_StateInit(& _state)
     _ta_check_success("TA_COS_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def COS_State( int state , double real ):
+def COS_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -9039,7 +9039,7 @@ def COS_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def COS_BatchState( int state , np.ndarray real not None ):
+def COS_BatchState( size_t state , np.ndarray real not None ):
     """ COS_BatchState(real)"""
     cdef:
         void * _state;
@@ -9062,7 +9062,7 @@ def COS_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def COS_StateFree( int state ):
+def COS_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -9073,7 +9073,7 @@ def COS_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def COS_StateSave( int state , int hFile ):
+def COS_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -9091,7 +9091,7 @@ def COS_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_COS_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_COS_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -9123,12 +9123,12 @@ def COSH_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_COSH_StateInit(& _state)
     _ta_check_success("TA_COSH_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def COSH_State( int state , double real ):
+def COSH_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -9140,7 +9140,7 @@ def COSH_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def COSH_BatchState( int state , np.ndarray real not None ):
+def COSH_BatchState( size_t state , np.ndarray real not None ):
     """ COSH_BatchState(real)"""
     cdef:
         void * _state;
@@ -9163,7 +9163,7 @@ def COSH_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def COSH_StateFree( int state ):
+def COSH_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -9174,7 +9174,7 @@ def COSH_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def COSH_StateSave( int state , int hFile ):
+def COSH_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -9192,7 +9192,7 @@ def COSH_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_COSH_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_COSH_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -9224,12 +9224,12 @@ def DEMA_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_DEMA_StateInit(& _state, timeperiod)
     _ta_check_success("TA_DEMA_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def DEMA_State( int state , double real ):
+def DEMA_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -9241,7 +9241,7 @@ def DEMA_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def DEMA_BatchState( int state , np.ndarray real not None ):
+def DEMA_BatchState( size_t state , np.ndarray real not None ):
     """ DEMA_BatchState(real)"""
     cdef:
         void * _state;
@@ -9264,7 +9264,7 @@ def DEMA_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def DEMA_StateFree( int state ):
+def DEMA_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -9275,7 +9275,7 @@ def DEMA_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def DEMA_StateSave( int state , int hFile ):
+def DEMA_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -9293,7 +9293,7 @@ def DEMA_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_DEMA_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_DEMA_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -9326,12 +9326,12 @@ def DIV_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_DIV_StateInit(& _state)
     _ta_check_success("TA_DIV_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def DIV_State( int state , double real0 , double real1 ):
+def DIV_State( size_t state , double real0 , double real1 ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -9343,7 +9343,7 @@ def DIV_State( int state , double real0 , double real1 ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def DIV_BatchState( int state , np.ndarray real0 not None , np.ndarray real1 not None ):
+def DIV_BatchState( size_t state , np.ndarray real0 not None , np.ndarray real1 not None ):
     """ DIV_BatchState(real0, real1)"""
     cdef:
         void * _state;
@@ -9367,7 +9367,7 @@ def DIV_BatchState( int state , np.ndarray real0 not None , np.ndarray real1 not
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def DIV_StateFree( int state ):
+def DIV_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -9378,7 +9378,7 @@ def DIV_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def DIV_StateSave( int state , int hFile ):
+def DIV_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -9396,7 +9396,7 @@ def DIV_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_DIV_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_DIV_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -9430,12 +9430,12 @@ def DX_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_DX_StateInit(& _state, timeperiod)
     _ta_check_success("TA_DX_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def DX_State( int state , double high , double low , double close ):
+def DX_State( size_t state , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -9447,7 +9447,7 @@ def DX_State( int state , double high , double low , double close ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def DX_BatchState( int state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def DX_BatchState( size_t state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ DX_BatchState(high, low, close)"""
     cdef:
         void * _state;
@@ -9472,7 +9472,7 @@ def DX_BatchState( int state , np.ndarray high not None , np.ndarray low not Non
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def DX_StateFree( int state ):
+def DX_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -9483,7 +9483,7 @@ def DX_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def DX_StateSave( int state , int hFile ):
+def DX_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -9501,7 +9501,7 @@ def DX_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_DX_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_DX_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -9533,12 +9533,12 @@ def EMA_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_EMA_StateInit(& _state, timeperiod)
     _ta_check_success("TA_EMA_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def EMA_State( int state , double real ):
+def EMA_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -9550,7 +9550,7 @@ def EMA_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def EMA_BatchState( int state , np.ndarray real not None ):
+def EMA_BatchState( size_t state , np.ndarray real not None ):
     """ EMA_BatchState(real)"""
     cdef:
         void * _state;
@@ -9573,7 +9573,7 @@ def EMA_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def EMA_StateFree( int state ):
+def EMA_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -9584,7 +9584,7 @@ def EMA_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def EMA_StateSave( int state , int hFile ):
+def EMA_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -9602,7 +9602,7 @@ def EMA_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_EMA_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_EMA_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -9634,12 +9634,12 @@ def EXP_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_EXP_StateInit(& _state)
     _ta_check_success("TA_EXP_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def EXP_State( int state , double real ):
+def EXP_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -9651,7 +9651,7 @@ def EXP_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def EXP_BatchState( int state , np.ndarray real not None ):
+def EXP_BatchState( size_t state , np.ndarray real not None ):
     """ EXP_BatchState(real)"""
     cdef:
         void * _state;
@@ -9674,7 +9674,7 @@ def EXP_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def EXP_StateFree( int state ):
+def EXP_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -9685,7 +9685,7 @@ def EXP_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def EXP_StateSave( int state , int hFile ):
+def EXP_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -9703,7 +9703,7 @@ def EXP_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_EXP_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_EXP_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -9735,12 +9735,12 @@ def FLOOR_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_FLOOR_StateInit(& _state)
     _ta_check_success("TA_FLOOR_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def FLOOR_State( int state , double real ):
+def FLOOR_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -9752,7 +9752,7 @@ def FLOOR_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def FLOOR_BatchState( int state , np.ndarray real not None ):
+def FLOOR_BatchState( size_t state , np.ndarray real not None ):
     """ FLOOR_BatchState(real)"""
     cdef:
         void * _state;
@@ -9775,7 +9775,7 @@ def FLOOR_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def FLOOR_StateFree( int state ):
+def FLOOR_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -9786,7 +9786,7 @@ def FLOOR_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def FLOOR_StateSave( int state , int hFile ):
+def FLOOR_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -9804,7 +9804,7 @@ def FLOOR_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_FLOOR_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_FLOOR_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -9836,12 +9836,12 @@ def HT_DCPERIOD_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_HT_DCPERIOD_StateInit(& _state)
     _ta_check_success("TA_HT_DCPERIOD_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def HT_DCPERIOD_State( int state , double real ):
+def HT_DCPERIOD_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -9853,7 +9853,7 @@ def HT_DCPERIOD_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def HT_DCPERIOD_BatchState( int state , np.ndarray real not None ):
+def HT_DCPERIOD_BatchState( size_t state , np.ndarray real not None ):
     """ HT_DCPERIOD_BatchState(real)"""
     cdef:
         void * _state;
@@ -9876,7 +9876,7 @@ def HT_DCPERIOD_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def HT_DCPERIOD_StateFree( int state ):
+def HT_DCPERIOD_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -9887,7 +9887,7 @@ def HT_DCPERIOD_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def HT_DCPERIOD_StateSave( int state , int hFile ):
+def HT_DCPERIOD_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -9905,7 +9905,7 @@ def HT_DCPERIOD_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_HT_DCPERIOD_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_HT_DCPERIOD_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -9937,12 +9937,12 @@ def HT_DCPHASE_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_HT_DCPHASE_StateInit(& _state)
     _ta_check_success("TA_HT_DCPHASE_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def HT_DCPHASE_State( int state , double real ):
+def HT_DCPHASE_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -9954,7 +9954,7 @@ def HT_DCPHASE_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def HT_DCPHASE_BatchState( int state , np.ndarray real not None ):
+def HT_DCPHASE_BatchState( size_t state , np.ndarray real not None ):
     """ HT_DCPHASE_BatchState(real)"""
     cdef:
         void * _state;
@@ -9977,7 +9977,7 @@ def HT_DCPHASE_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def HT_DCPHASE_StateFree( int state ):
+def HT_DCPHASE_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -9988,7 +9988,7 @@ def HT_DCPHASE_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def HT_DCPHASE_StateSave( int state , int hFile ):
+def HT_DCPHASE_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -10006,7 +10006,7 @@ def HT_DCPHASE_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_HT_DCPHASE_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_HT_DCPHASE_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -10040,12 +10040,12 @@ def HT_PHASOR_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_HT_PHASOR_StateInit(& _state)
     _ta_check_success("TA_HT_PHASOR_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def HT_PHASOR_State( int state , double real ):
+def HT_PHASOR_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -10058,7 +10058,7 @@ def HT_PHASOR_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def HT_PHASOR_BatchState( int state , np.ndarray real not None ):
+def HT_PHASOR_BatchState( size_t state , np.ndarray real not None ):
     """ HT_PHASOR_BatchState(real)"""
     cdef:
         void * _state;
@@ -10083,7 +10083,7 @@ def HT_PHASOR_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def HT_PHASOR_StateFree( int state ):
+def HT_PHASOR_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -10094,7 +10094,7 @@ def HT_PHASOR_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def HT_PHASOR_StateSave( int state , int hFile ):
+def HT_PHASOR_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -10112,7 +10112,7 @@ def HT_PHASOR_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_HT_PHASOR_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_HT_PHASOR_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -10146,12 +10146,12 @@ def HT_SINE_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_HT_SINE_StateInit(& _state)
     _ta_check_success("TA_HT_SINE_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def HT_SINE_State( int state , double real ):
+def HT_SINE_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -10164,7 +10164,7 @@ def HT_SINE_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def HT_SINE_BatchState( int state , np.ndarray real not None ):
+def HT_SINE_BatchState( size_t state , np.ndarray real not None ):
     """ HT_SINE_BatchState(real)"""
     cdef:
         void * _state;
@@ -10189,7 +10189,7 @@ def HT_SINE_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def HT_SINE_StateFree( int state ):
+def HT_SINE_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -10200,7 +10200,7 @@ def HT_SINE_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def HT_SINE_StateSave( int state , int hFile ):
+def HT_SINE_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -10218,7 +10218,7 @@ def HT_SINE_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_HT_SINE_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_HT_SINE_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -10250,12 +10250,12 @@ def HT_TRENDLINE_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_HT_TRENDLINE_StateInit(& _state)
     _ta_check_success("TA_HT_TRENDLINE_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def HT_TRENDLINE_State( int state , double real ):
+def HT_TRENDLINE_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -10267,7 +10267,7 @@ def HT_TRENDLINE_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def HT_TRENDLINE_BatchState( int state , np.ndarray real not None ):
+def HT_TRENDLINE_BatchState( size_t state , np.ndarray real not None ):
     """ HT_TRENDLINE_BatchState(real)"""
     cdef:
         void * _state;
@@ -10290,7 +10290,7 @@ def HT_TRENDLINE_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def HT_TRENDLINE_StateFree( int state ):
+def HT_TRENDLINE_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -10301,7 +10301,7 @@ def HT_TRENDLINE_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def HT_TRENDLINE_StateSave( int state , int hFile ):
+def HT_TRENDLINE_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -10319,7 +10319,7 @@ def HT_TRENDLINE_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_HT_TRENDLINE_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_HT_TRENDLINE_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -10351,12 +10351,12 @@ def HT_TRENDMODE_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_HT_TRENDMODE_StateInit(& _state)
     _ta_check_success("TA_HT_TRENDMODE_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def HT_TRENDMODE_State( int state , double real ):
+def HT_TRENDMODE_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -10368,7 +10368,7 @@ def HT_TRENDMODE_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def HT_TRENDMODE_BatchState( int state , np.ndarray real not None ):
+def HT_TRENDMODE_BatchState( size_t state , np.ndarray real not None ):
     """ HT_TRENDMODE_BatchState(real)"""
     cdef:
         void * _state;
@@ -10391,7 +10391,7 @@ def HT_TRENDMODE_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def HT_TRENDMODE_StateFree( int state ):
+def HT_TRENDMODE_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -10402,7 +10402,7 @@ def HT_TRENDMODE_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def HT_TRENDMODE_StateSave( int state , int hFile ):
+def HT_TRENDMODE_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -10420,7 +10420,7 @@ def HT_TRENDMODE_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_HT_TRENDMODE_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_HT_TRENDMODE_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -10453,12 +10453,12 @@ def IMI_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_IMI_StateInit(& _state, timeperiod)
     _ta_check_success("TA_IMI_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def IMI_State( int state , double open , double close ):
+def IMI_State( size_t state , double open , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -10470,7 +10470,7 @@ def IMI_State( int state , double open , double close ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def IMI_BatchState( int state , np.ndarray open not None , np.ndarray close not None ):
+def IMI_BatchState( size_t state , np.ndarray open not None , np.ndarray close not None ):
     """ IMI_BatchState(open, close)"""
     cdef:
         void * _state;
@@ -10494,7 +10494,7 @@ def IMI_BatchState( int state , np.ndarray open not None , np.ndarray close not 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def IMI_StateFree( int state ):
+def IMI_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -10505,7 +10505,7 @@ def IMI_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def IMI_StateSave( int state , int hFile ):
+def IMI_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -10523,7 +10523,7 @@ def IMI_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_IMI_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_IMI_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -10555,12 +10555,12 @@ def KAMA_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_KAMA_StateInit(& _state, timeperiod)
     _ta_check_success("TA_KAMA_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def KAMA_State( int state , double real ):
+def KAMA_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -10572,7 +10572,7 @@ def KAMA_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def KAMA_BatchState( int state , np.ndarray real not None ):
+def KAMA_BatchState( size_t state , np.ndarray real not None ):
     """ KAMA_BatchState(real)"""
     cdef:
         void * _state;
@@ -10595,7 +10595,7 @@ def KAMA_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def KAMA_StateFree( int state ):
+def KAMA_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -10606,7 +10606,7 @@ def KAMA_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def KAMA_StateSave( int state , int hFile ):
+def KAMA_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -10624,7 +10624,7 @@ def KAMA_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_KAMA_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_KAMA_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -10656,12 +10656,12 @@ def LINEARREG_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_LINEARREG_StateInit(& _state, timeperiod)
     _ta_check_success("TA_LINEARREG_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def LINEARREG_State( int state , double real ):
+def LINEARREG_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -10673,7 +10673,7 @@ def LINEARREG_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def LINEARREG_BatchState( int state , np.ndarray real not None ):
+def LINEARREG_BatchState( size_t state , np.ndarray real not None ):
     """ LINEARREG_BatchState(real)"""
     cdef:
         void * _state;
@@ -10696,7 +10696,7 @@ def LINEARREG_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def LINEARREG_StateFree( int state ):
+def LINEARREG_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -10707,7 +10707,7 @@ def LINEARREG_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def LINEARREG_StateSave( int state , int hFile ):
+def LINEARREG_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -10725,7 +10725,7 @@ def LINEARREG_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_LINEARREG_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_LINEARREG_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -10757,12 +10757,12 @@ def LINEARREG_ANGLE_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_LINEARREG_ANGLE_StateInit(& _state, timeperiod)
     _ta_check_success("TA_LINEARREG_ANGLE_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def LINEARREG_ANGLE_State( int state , double real ):
+def LINEARREG_ANGLE_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -10774,7 +10774,7 @@ def LINEARREG_ANGLE_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def LINEARREG_ANGLE_BatchState( int state , np.ndarray real not None ):
+def LINEARREG_ANGLE_BatchState( size_t state , np.ndarray real not None ):
     """ LINEARREG_ANGLE_BatchState(real)"""
     cdef:
         void * _state;
@@ -10797,7 +10797,7 @@ def LINEARREG_ANGLE_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def LINEARREG_ANGLE_StateFree( int state ):
+def LINEARREG_ANGLE_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -10808,7 +10808,7 @@ def LINEARREG_ANGLE_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def LINEARREG_ANGLE_StateSave( int state , int hFile ):
+def LINEARREG_ANGLE_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -10826,7 +10826,7 @@ def LINEARREG_ANGLE_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_LINEARREG_ANGLE_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_LINEARREG_ANGLE_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -10858,12 +10858,12 @@ def LINEARREG_INTERCEPT_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_LINEARREG_INTERCEPT_StateInit(& _state, timeperiod)
     _ta_check_success("TA_LINEARREG_INTERCEPT_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def LINEARREG_INTERCEPT_State( int state , double real ):
+def LINEARREG_INTERCEPT_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -10875,7 +10875,7 @@ def LINEARREG_INTERCEPT_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def LINEARREG_INTERCEPT_BatchState( int state , np.ndarray real not None ):
+def LINEARREG_INTERCEPT_BatchState( size_t state , np.ndarray real not None ):
     """ LINEARREG_INTERCEPT_BatchState(real)"""
     cdef:
         void * _state;
@@ -10898,7 +10898,7 @@ def LINEARREG_INTERCEPT_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def LINEARREG_INTERCEPT_StateFree( int state ):
+def LINEARREG_INTERCEPT_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -10909,7 +10909,7 @@ def LINEARREG_INTERCEPT_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def LINEARREG_INTERCEPT_StateSave( int state , int hFile ):
+def LINEARREG_INTERCEPT_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -10927,7 +10927,7 @@ def LINEARREG_INTERCEPT_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_LINEARREG_INTERCEPT_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_LINEARREG_INTERCEPT_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -10959,12 +10959,12 @@ def LINEARREG_SLOPE_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_LINEARREG_SLOPE_StateInit(& _state, timeperiod)
     _ta_check_success("TA_LINEARREG_SLOPE_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def LINEARREG_SLOPE_State( int state , double real ):
+def LINEARREG_SLOPE_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -10976,7 +10976,7 @@ def LINEARREG_SLOPE_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def LINEARREG_SLOPE_BatchState( int state , np.ndarray real not None ):
+def LINEARREG_SLOPE_BatchState( size_t state , np.ndarray real not None ):
     """ LINEARREG_SLOPE_BatchState(real)"""
     cdef:
         void * _state;
@@ -10999,7 +10999,7 @@ def LINEARREG_SLOPE_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def LINEARREG_SLOPE_StateFree( int state ):
+def LINEARREG_SLOPE_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -11010,7 +11010,7 @@ def LINEARREG_SLOPE_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def LINEARREG_SLOPE_StateSave( int state , int hFile ):
+def LINEARREG_SLOPE_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -11028,7 +11028,7 @@ def LINEARREG_SLOPE_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_LINEARREG_SLOPE_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_LINEARREG_SLOPE_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -11060,12 +11060,12 @@ def LN_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_LN_StateInit(& _state)
     _ta_check_success("TA_LN_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def LN_State( int state , double real ):
+def LN_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -11077,7 +11077,7 @@ def LN_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def LN_BatchState( int state , np.ndarray real not None ):
+def LN_BatchState( size_t state , np.ndarray real not None ):
     """ LN_BatchState(real)"""
     cdef:
         void * _state;
@@ -11100,7 +11100,7 @@ def LN_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def LN_StateFree( int state ):
+def LN_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -11111,7 +11111,7 @@ def LN_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def LN_StateSave( int state , int hFile ):
+def LN_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -11129,7 +11129,7 @@ def LN_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_LN_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_LN_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -11161,12 +11161,12 @@ def LOG10_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_LOG10_StateInit(& _state)
     _ta_check_success("TA_LOG10_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def LOG10_State( int state , double real ):
+def LOG10_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -11178,7 +11178,7 @@ def LOG10_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def LOG10_BatchState( int state , np.ndarray real not None ):
+def LOG10_BatchState( size_t state , np.ndarray real not None ):
     """ LOG10_BatchState(real)"""
     cdef:
         void * _state;
@@ -11201,7 +11201,7 @@ def LOG10_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def LOG10_StateFree( int state ):
+def LOG10_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -11212,7 +11212,7 @@ def LOG10_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def LOG10_StateSave( int state , int hFile ):
+def LOG10_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -11230,7 +11230,7 @@ def LOG10_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_LOG10_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_LOG10_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -11262,12 +11262,12 @@ def MA_StateInit( int timeperiod=-2**31 , int matype=0 ):
         TA_RetCode retCode
     retCode = lib.TA_MA_StateInit(& _state, timeperiod, matype)
     _ta_check_success("TA_MA_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MA_State( int state , double real ):
+def MA_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -11279,7 +11279,7 @@ def MA_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MA_BatchState( int state , np.ndarray real not None ):
+def MA_BatchState( size_t state , np.ndarray real not None ):
     """ MA_BatchState(real)"""
     cdef:
         void * _state;
@@ -11302,7 +11302,7 @@ def MA_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MA_StateFree( int state ):
+def MA_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -11313,7 +11313,7 @@ def MA_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MA_StateSave( int state , int hFile ):
+def MA_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -11331,7 +11331,7 @@ def MA_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_MA_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_MA_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -11367,12 +11367,12 @@ def MACD_StateInit( int fastperiod=-2**31 , int slowperiod=-2**31 , int signalpe
         TA_RetCode retCode
     retCode = lib.TA_MACD_StateInit(& _state, fastperiod, slowperiod, signalperiod)
     _ta_check_success("TA_MACD_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MACD_State( int state , double real ):
+def MACD_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -11386,7 +11386,7 @@ def MACD_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MACD_BatchState( int state , np.ndarray real not None ):
+def MACD_BatchState( size_t state , np.ndarray real not None ):
     """ MACD_BatchState(real)"""
     cdef:
         void * _state;
@@ -11413,7 +11413,7 @@ def MACD_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MACD_StateFree( int state ):
+def MACD_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -11424,7 +11424,7 @@ def MACD_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MACD_StateSave( int state , int hFile ):
+def MACD_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -11442,7 +11442,7 @@ def MACD_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_MACD_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_MACD_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -11478,12 +11478,12 @@ def MACDEXT_StateInit( int fastperiod=-2**31 , int fastmatype=0 , int slowperiod
         TA_RetCode retCode
     retCode = lib.TA_MACDEXT_StateInit(& _state, fastperiod, fastmatype, slowperiod, slowmatype, signalperiod, signalmatype)
     _ta_check_success("TA_MACDEXT_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MACDEXT_State( int state , double real ):
+def MACDEXT_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -11497,7 +11497,7 @@ def MACDEXT_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MACDEXT_BatchState( int state , np.ndarray real not None ):
+def MACDEXT_BatchState( size_t state , np.ndarray real not None ):
     """ MACDEXT_BatchState(real)"""
     cdef:
         void * _state;
@@ -11524,7 +11524,7 @@ def MACDEXT_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MACDEXT_StateFree( int state ):
+def MACDEXT_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -11535,7 +11535,7 @@ def MACDEXT_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MACDEXT_StateSave( int state , int hFile ):
+def MACDEXT_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -11553,7 +11553,7 @@ def MACDEXT_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_MACDEXT_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_MACDEXT_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -11589,12 +11589,12 @@ def MACDFIX_StateInit( int signalperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_MACDFIX_StateInit(& _state, signalperiod)
     _ta_check_success("TA_MACDFIX_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MACDFIX_State( int state , double real ):
+def MACDFIX_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -11608,7 +11608,7 @@ def MACDFIX_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MACDFIX_BatchState( int state , np.ndarray real not None ):
+def MACDFIX_BatchState( size_t state , np.ndarray real not None ):
     """ MACDFIX_BatchState(real)"""
     cdef:
         void * _state;
@@ -11635,7 +11635,7 @@ def MACDFIX_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MACDFIX_StateFree( int state ):
+def MACDFIX_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -11646,7 +11646,7 @@ def MACDFIX_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MACDFIX_StateSave( int state , int hFile ):
+def MACDFIX_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -11664,7 +11664,7 @@ def MACDFIX_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_MACDFIX_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_MACDFIX_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -11698,12 +11698,12 @@ def MAMA_StateInit( double fastlimit=-4e37 , double slowlimit=-4e37 ):
         TA_RetCode retCode
     retCode = lib.TA_MAMA_StateInit(& _state, fastlimit, slowlimit)
     _ta_check_success("TA_MAMA_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MAMA_State( int state , double real ):
+def MAMA_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -11716,7 +11716,7 @@ def MAMA_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MAMA_BatchState( int state , np.ndarray real not None ):
+def MAMA_BatchState( size_t state , np.ndarray real not None ):
     """ MAMA_BatchState(real)"""
     cdef:
         void * _state;
@@ -11741,7 +11741,7 @@ def MAMA_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MAMA_StateFree( int state ):
+def MAMA_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -11752,7 +11752,7 @@ def MAMA_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MAMA_StateSave( int state , int hFile ):
+def MAMA_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -11770,7 +11770,7 @@ def MAMA_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_MAMA_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_MAMA_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -11803,12 +11803,12 @@ def MAVP_StateInit( int minperiod=-2**31 , int maxperiod=-2**31 , int matype=0 )
         TA_RetCode retCode
     retCode = lib.TA_MAVP_StateInit(& _state, minperiod, maxperiod, matype)
     _ta_check_success("TA_MAVP_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MAVP_State( int state , double real , double periods ):
+def MAVP_State( size_t state , double real , double periods ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -11820,7 +11820,7 @@ def MAVP_State( int state , double real , double periods ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MAVP_BatchState( int state , np.ndarray real not None , np.ndarray periods not None ):
+def MAVP_BatchState( size_t state , np.ndarray real not None , np.ndarray periods not None ):
     """ MAVP_BatchState(real, periods)"""
     cdef:
         void * _state;
@@ -11844,7 +11844,7 @@ def MAVP_BatchState( int state , np.ndarray real not None , np.ndarray periods n
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MAVP_StateFree( int state ):
+def MAVP_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -11855,7 +11855,7 @@ def MAVP_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MAVP_StateSave( int state , int hFile ):
+def MAVP_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -11873,7 +11873,7 @@ def MAVP_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_MAVP_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_MAVP_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -11905,12 +11905,12 @@ def MAX_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_MAX_StateInit(& _state, timeperiod)
     _ta_check_success("TA_MAX_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MAX_State( int state , double real ):
+def MAX_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -11922,7 +11922,7 @@ def MAX_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MAX_BatchState( int state , np.ndarray real not None ):
+def MAX_BatchState( size_t state , np.ndarray real not None ):
     """ MAX_BatchState(real)"""
     cdef:
         void * _state;
@@ -11945,7 +11945,7 @@ def MAX_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MAX_StateFree( int state ):
+def MAX_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -11956,7 +11956,7 @@ def MAX_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MAX_StateSave( int state , int hFile ):
+def MAX_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -11974,7 +11974,7 @@ def MAX_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_MAX_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_MAX_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -12006,12 +12006,12 @@ def MAXINDEX_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_MAXINDEX_StateInit(& _state, timeperiod)
     _ta_check_success("TA_MAXINDEX_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MAXINDEX_State( int state , double real ):
+def MAXINDEX_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -12023,7 +12023,7 @@ def MAXINDEX_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MAXINDEX_BatchState( int state , np.ndarray real not None ):
+def MAXINDEX_BatchState( size_t state , np.ndarray real not None ):
     """ MAXINDEX_BatchState(real)"""
     cdef:
         void * _state;
@@ -12046,7 +12046,7 @@ def MAXINDEX_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MAXINDEX_StateFree( int state ):
+def MAXINDEX_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -12057,7 +12057,7 @@ def MAXINDEX_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MAXINDEX_StateSave( int state , int hFile ):
+def MAXINDEX_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -12075,7 +12075,7 @@ def MAXINDEX_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_MAXINDEX_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_MAXINDEX_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -12108,12 +12108,12 @@ def MEDPRICE_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_MEDPRICE_StateInit(& _state)
     _ta_check_success("TA_MEDPRICE_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MEDPRICE_State( int state , double high , double low ):
+def MEDPRICE_State( size_t state , double high , double low ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -12125,7 +12125,7 @@ def MEDPRICE_State( int state , double high , double low ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MEDPRICE_BatchState( int state , np.ndarray high not None , np.ndarray low not None ):
+def MEDPRICE_BatchState( size_t state , np.ndarray high not None , np.ndarray low not None ):
     """ MEDPRICE_BatchState(high, low)"""
     cdef:
         void * _state;
@@ -12149,7 +12149,7 @@ def MEDPRICE_BatchState( int state , np.ndarray high not None , np.ndarray low n
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MEDPRICE_StateFree( int state ):
+def MEDPRICE_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -12160,7 +12160,7 @@ def MEDPRICE_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MEDPRICE_StateSave( int state , int hFile ):
+def MEDPRICE_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -12178,7 +12178,7 @@ def MEDPRICE_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_MEDPRICE_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_MEDPRICE_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -12213,12 +12213,12 @@ def MFI_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_MFI_StateInit(& _state, timeperiod)
     _ta_check_success("TA_MFI_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MFI_State( int state , double high , double low , double close , double volume ):
+def MFI_State( size_t state , double high , double low , double close , double volume ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -12230,7 +12230,7 @@ def MFI_State( int state , double high , double low , double close , double volu
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MFI_BatchState( int state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None , np.ndarray volume not None ):
+def MFI_BatchState( size_t state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None , np.ndarray volume not None ):
     """ MFI_BatchState(high, low, close, volume)"""
     cdef:
         void * _state;
@@ -12256,7 +12256,7 @@ def MFI_BatchState( int state , np.ndarray high not None , np.ndarray low not No
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MFI_StateFree( int state ):
+def MFI_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -12267,7 +12267,7 @@ def MFI_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MFI_StateSave( int state , int hFile ):
+def MFI_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -12285,7 +12285,7 @@ def MFI_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_MFI_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_MFI_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -12317,12 +12317,12 @@ def MIDPOINT_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_MIDPOINT_StateInit(& _state, timeperiod)
     _ta_check_success("TA_MIDPOINT_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MIDPOINT_State( int state , double real ):
+def MIDPOINT_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -12334,7 +12334,7 @@ def MIDPOINT_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MIDPOINT_BatchState( int state , np.ndarray real not None ):
+def MIDPOINT_BatchState( size_t state , np.ndarray real not None ):
     """ MIDPOINT_BatchState(real)"""
     cdef:
         void * _state;
@@ -12357,7 +12357,7 @@ def MIDPOINT_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MIDPOINT_StateFree( int state ):
+def MIDPOINT_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -12368,7 +12368,7 @@ def MIDPOINT_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MIDPOINT_StateSave( int state , int hFile ):
+def MIDPOINT_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -12386,7 +12386,7 @@ def MIDPOINT_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_MIDPOINT_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_MIDPOINT_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -12419,12 +12419,12 @@ def MIDPRICE_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_MIDPRICE_StateInit(& _state, timeperiod)
     _ta_check_success("TA_MIDPRICE_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MIDPRICE_State( int state , double high , double low ):
+def MIDPRICE_State( size_t state , double high , double low ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -12436,7 +12436,7 @@ def MIDPRICE_State( int state , double high , double low ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MIDPRICE_BatchState( int state , np.ndarray high not None , np.ndarray low not None ):
+def MIDPRICE_BatchState( size_t state , np.ndarray high not None , np.ndarray low not None ):
     """ MIDPRICE_BatchState(high, low)"""
     cdef:
         void * _state;
@@ -12460,7 +12460,7 @@ def MIDPRICE_BatchState( int state , np.ndarray high not None , np.ndarray low n
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MIDPRICE_StateFree( int state ):
+def MIDPRICE_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -12471,7 +12471,7 @@ def MIDPRICE_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MIDPRICE_StateSave( int state , int hFile ):
+def MIDPRICE_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -12489,7 +12489,7 @@ def MIDPRICE_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_MIDPRICE_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_MIDPRICE_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -12521,12 +12521,12 @@ def MIN_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_MIN_StateInit(& _state, timeperiod)
     _ta_check_success("TA_MIN_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MIN_State( int state , double real ):
+def MIN_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -12538,7 +12538,7 @@ def MIN_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MIN_BatchState( int state , np.ndarray real not None ):
+def MIN_BatchState( size_t state , np.ndarray real not None ):
     """ MIN_BatchState(real)"""
     cdef:
         void * _state;
@@ -12561,7 +12561,7 @@ def MIN_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MIN_StateFree( int state ):
+def MIN_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -12572,7 +12572,7 @@ def MIN_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MIN_StateSave( int state , int hFile ):
+def MIN_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -12590,7 +12590,7 @@ def MIN_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_MIN_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_MIN_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -12622,12 +12622,12 @@ def MININDEX_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_MININDEX_StateInit(& _state, timeperiod)
     _ta_check_success("TA_MININDEX_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MININDEX_State( int state , double real ):
+def MININDEX_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -12639,7 +12639,7 @@ def MININDEX_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MININDEX_BatchState( int state , np.ndarray real not None ):
+def MININDEX_BatchState( size_t state , np.ndarray real not None ):
     """ MININDEX_BatchState(real)"""
     cdef:
         void * _state;
@@ -12662,7 +12662,7 @@ def MININDEX_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MININDEX_StateFree( int state ):
+def MININDEX_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -12673,7 +12673,7 @@ def MININDEX_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MININDEX_StateSave( int state , int hFile ):
+def MININDEX_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -12691,7 +12691,7 @@ def MININDEX_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_MININDEX_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_MININDEX_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -12725,12 +12725,12 @@ def MINMAX_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_MINMAX_StateInit(& _state, timeperiod)
     _ta_check_success("TA_MINMAX_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MINMAX_State( int state , double real ):
+def MINMAX_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -12743,7 +12743,7 @@ def MINMAX_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MINMAX_BatchState( int state , np.ndarray real not None ):
+def MINMAX_BatchState( size_t state , np.ndarray real not None ):
     """ MINMAX_BatchState(real)"""
     cdef:
         void * _state;
@@ -12768,7 +12768,7 @@ def MINMAX_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MINMAX_StateFree( int state ):
+def MINMAX_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -12779,7 +12779,7 @@ def MINMAX_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MINMAX_StateSave( int state , int hFile ):
+def MINMAX_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -12797,7 +12797,7 @@ def MINMAX_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_MINMAX_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_MINMAX_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -12831,12 +12831,12 @@ def MINMAXINDEX_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_MINMAXINDEX_StateInit(& _state, timeperiod)
     _ta_check_success("TA_MINMAXINDEX_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MINMAXINDEX_State( int state , double real ):
+def MINMAXINDEX_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -12849,7 +12849,7 @@ def MINMAXINDEX_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MINMAXINDEX_BatchState( int state , np.ndarray real not None ):
+def MINMAXINDEX_BatchState( size_t state , np.ndarray real not None ):
     """ MINMAXINDEX_BatchState(real)"""
     cdef:
         void * _state;
@@ -12874,7 +12874,7 @@ def MINMAXINDEX_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MINMAXINDEX_StateFree( int state ):
+def MINMAXINDEX_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -12885,7 +12885,7 @@ def MINMAXINDEX_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MINMAXINDEX_StateSave( int state , int hFile ):
+def MINMAXINDEX_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -12903,7 +12903,7 @@ def MINMAXINDEX_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_MINMAXINDEX_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_MINMAXINDEX_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -12937,12 +12937,12 @@ def MINUS_DI_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_MINUS_DI_StateInit(& _state, timeperiod)
     _ta_check_success("TA_MINUS_DI_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MINUS_DI_State( int state , double high , double low , double close ):
+def MINUS_DI_State( size_t state , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -12954,7 +12954,7 @@ def MINUS_DI_State( int state , double high , double low , double close ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MINUS_DI_BatchState( int state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def MINUS_DI_BatchState( size_t state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ MINUS_DI_BatchState(high, low, close)"""
     cdef:
         void * _state;
@@ -12979,7 +12979,7 @@ def MINUS_DI_BatchState( int state , np.ndarray high not None , np.ndarray low n
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MINUS_DI_StateFree( int state ):
+def MINUS_DI_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -12990,7 +12990,7 @@ def MINUS_DI_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MINUS_DI_StateSave( int state , int hFile ):
+def MINUS_DI_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -13008,7 +13008,7 @@ def MINUS_DI_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_MINUS_DI_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_MINUS_DI_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -13041,12 +13041,12 @@ def MINUS_DM_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_MINUS_DM_StateInit(& _state, timeperiod)
     _ta_check_success("TA_MINUS_DM_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MINUS_DM_State( int state , double high , double low ):
+def MINUS_DM_State( size_t state , double high , double low ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -13058,7 +13058,7 @@ def MINUS_DM_State( int state , double high , double low ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MINUS_DM_BatchState( int state , np.ndarray high not None , np.ndarray low not None ):
+def MINUS_DM_BatchState( size_t state , np.ndarray high not None , np.ndarray low not None ):
     """ MINUS_DM_BatchState(high, low)"""
     cdef:
         void * _state;
@@ -13082,7 +13082,7 @@ def MINUS_DM_BatchState( int state , np.ndarray high not None , np.ndarray low n
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MINUS_DM_StateFree( int state ):
+def MINUS_DM_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -13093,7 +13093,7 @@ def MINUS_DM_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MINUS_DM_StateSave( int state , int hFile ):
+def MINUS_DM_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -13111,7 +13111,7 @@ def MINUS_DM_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_MINUS_DM_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_MINUS_DM_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -13143,12 +13143,12 @@ def MOM_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_MOM_StateInit(& _state, timeperiod)
     _ta_check_success("TA_MOM_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MOM_State( int state , double real ):
+def MOM_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -13160,7 +13160,7 @@ def MOM_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MOM_BatchState( int state , np.ndarray real not None ):
+def MOM_BatchState( size_t state , np.ndarray real not None ):
     """ MOM_BatchState(real)"""
     cdef:
         void * _state;
@@ -13183,7 +13183,7 @@ def MOM_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MOM_StateFree( int state ):
+def MOM_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -13194,7 +13194,7 @@ def MOM_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MOM_StateSave( int state , int hFile ):
+def MOM_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -13212,7 +13212,7 @@ def MOM_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_MOM_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_MOM_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -13245,12 +13245,12 @@ def MULT_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_MULT_StateInit(& _state)
     _ta_check_success("TA_MULT_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MULT_State( int state , double real0 , double real1 ):
+def MULT_State( size_t state , double real0 , double real1 ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -13262,7 +13262,7 @@ def MULT_State( int state , double real0 , double real1 ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MULT_BatchState( int state , np.ndarray real0 not None , np.ndarray real1 not None ):
+def MULT_BatchState( size_t state , np.ndarray real0 not None , np.ndarray real1 not None ):
     """ MULT_BatchState(real0, real1)"""
     cdef:
         void * _state;
@@ -13286,7 +13286,7 @@ def MULT_BatchState( int state , np.ndarray real0 not None , np.ndarray real1 no
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MULT_StateFree( int state ):
+def MULT_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -13297,7 +13297,7 @@ def MULT_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def MULT_StateSave( int state , int hFile ):
+def MULT_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -13315,7 +13315,7 @@ def MULT_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_MULT_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_MULT_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -13349,12 +13349,12 @@ def NATR_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_NATR_StateInit(& _state, timeperiod)
     _ta_check_success("TA_NATR_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def NATR_State( int state , double high , double low , double close ):
+def NATR_State( size_t state , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -13366,7 +13366,7 @@ def NATR_State( int state , double high , double low , double close ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def NATR_BatchState( int state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def NATR_BatchState( size_t state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ NATR_BatchState(high, low, close)"""
     cdef:
         void * _state;
@@ -13391,7 +13391,7 @@ def NATR_BatchState( int state , np.ndarray high not None , np.ndarray low not N
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def NATR_StateFree( int state ):
+def NATR_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -13402,7 +13402,7 @@ def NATR_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def NATR_StateSave( int state , int hFile ):
+def NATR_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -13420,7 +13420,7 @@ def NATR_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_NATR_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_NATR_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -13453,12 +13453,12 @@ def NVI_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_NVI_StateInit(& _state)
     _ta_check_success("TA_NVI_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def NVI_State( int state , double close , double volume ):
+def NVI_State( size_t state , double close , double volume ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -13470,7 +13470,7 @@ def NVI_State( int state , double close , double volume ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def NVI_BatchState( int state , np.ndarray close not None , np.ndarray volume not None ):
+def NVI_BatchState( size_t state , np.ndarray close not None , np.ndarray volume not None ):
     """ NVI_BatchState(close, volume)"""
     cdef:
         void * _state;
@@ -13494,7 +13494,7 @@ def NVI_BatchState( int state , np.ndarray close not None , np.ndarray volume no
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def NVI_StateFree( int state ):
+def NVI_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -13505,7 +13505,7 @@ def NVI_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def NVI_StateSave( int state , int hFile ):
+def NVI_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -13523,7 +13523,7 @@ def NVI_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_NVI_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_NVI_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -13556,12 +13556,12 @@ def OBV_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_OBV_StateInit(& _state)
     _ta_check_success("TA_OBV_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def OBV_State( int state , double close , double volume ):
+def OBV_State( size_t state , double close , double volume ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -13573,7 +13573,7 @@ def OBV_State( int state , double close , double volume ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def OBV_BatchState( int state , np.ndarray close not None , np.ndarray volume not None ):
+def OBV_BatchState( size_t state , np.ndarray close not None , np.ndarray volume not None ):
     """ OBV_BatchState(close, volume)"""
     cdef:
         void * _state;
@@ -13597,7 +13597,7 @@ def OBV_BatchState( int state , np.ndarray close not None , np.ndarray volume no
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def OBV_StateFree( int state ):
+def OBV_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -13608,7 +13608,7 @@ def OBV_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def OBV_StateSave( int state , int hFile ):
+def OBV_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -13626,7 +13626,7 @@ def OBV_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_OBV_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_OBV_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -13660,12 +13660,12 @@ def PLUS_DI_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_PLUS_DI_StateInit(& _state, timeperiod)
     _ta_check_success("TA_PLUS_DI_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def PLUS_DI_State( int state , double high , double low , double close ):
+def PLUS_DI_State( size_t state , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -13677,7 +13677,7 @@ def PLUS_DI_State( int state , double high , double low , double close ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def PLUS_DI_BatchState( int state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def PLUS_DI_BatchState( size_t state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ PLUS_DI_BatchState(high, low, close)"""
     cdef:
         void * _state;
@@ -13702,7 +13702,7 @@ def PLUS_DI_BatchState( int state , np.ndarray high not None , np.ndarray low no
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def PLUS_DI_StateFree( int state ):
+def PLUS_DI_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -13713,7 +13713,7 @@ def PLUS_DI_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def PLUS_DI_StateSave( int state , int hFile ):
+def PLUS_DI_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -13731,7 +13731,7 @@ def PLUS_DI_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_PLUS_DI_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_PLUS_DI_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -13764,12 +13764,12 @@ def PLUS_DM_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_PLUS_DM_StateInit(& _state, timeperiod)
     _ta_check_success("TA_PLUS_DM_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def PLUS_DM_State( int state , double high , double low ):
+def PLUS_DM_State( size_t state , double high , double low ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -13781,7 +13781,7 @@ def PLUS_DM_State( int state , double high , double low ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def PLUS_DM_BatchState( int state , np.ndarray high not None , np.ndarray low not None ):
+def PLUS_DM_BatchState( size_t state , np.ndarray high not None , np.ndarray low not None ):
     """ PLUS_DM_BatchState(high, low)"""
     cdef:
         void * _state;
@@ -13805,7 +13805,7 @@ def PLUS_DM_BatchState( int state , np.ndarray high not None , np.ndarray low no
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def PLUS_DM_StateFree( int state ):
+def PLUS_DM_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -13816,7 +13816,7 @@ def PLUS_DM_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def PLUS_DM_StateSave( int state , int hFile ):
+def PLUS_DM_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -13834,7 +13834,7 @@ def PLUS_DM_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_PLUS_DM_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_PLUS_DM_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -13866,12 +13866,12 @@ def PPO_StateInit( int fastperiod=-2**31 , int slowperiod=-2**31 , int matype=0 
         TA_RetCode retCode
     retCode = lib.TA_PPO_StateInit(& _state, fastperiod, slowperiod, matype)
     _ta_check_success("TA_PPO_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def PPO_State( int state , double real ):
+def PPO_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -13883,7 +13883,7 @@ def PPO_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def PPO_BatchState( int state , np.ndarray real not None ):
+def PPO_BatchState( size_t state , np.ndarray real not None ):
     """ PPO_BatchState(real)"""
     cdef:
         void * _state;
@@ -13906,7 +13906,7 @@ def PPO_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def PPO_StateFree( int state ):
+def PPO_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -13917,7 +13917,7 @@ def PPO_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def PPO_StateSave( int state , int hFile ):
+def PPO_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -13935,7 +13935,7 @@ def PPO_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_PPO_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_PPO_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -13968,12 +13968,12 @@ def PVI_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_PVI_StateInit(& _state)
     _ta_check_success("TA_PVI_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def PVI_State( int state , double close , double volume ):
+def PVI_State( size_t state , double close , double volume ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -13985,7 +13985,7 @@ def PVI_State( int state , double close , double volume ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def PVI_BatchState( int state , np.ndarray close not None , np.ndarray volume not None ):
+def PVI_BatchState( size_t state , np.ndarray close not None , np.ndarray volume not None ):
     """ PVI_BatchState(close, volume)"""
     cdef:
         void * _state;
@@ -14009,7 +14009,7 @@ def PVI_BatchState( int state , np.ndarray close not None , np.ndarray volume no
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def PVI_StateFree( int state ):
+def PVI_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -14020,7 +14020,7 @@ def PVI_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def PVI_StateSave( int state , int hFile ):
+def PVI_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -14038,7 +14038,7 @@ def PVI_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_PVI_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_PVI_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -14071,12 +14071,12 @@ def PVT_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_PVT_StateInit(& _state)
     _ta_check_success("TA_PVT_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def PVT_State( int state , double close , double volume ):
+def PVT_State( size_t state , double close , double volume ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -14088,7 +14088,7 @@ def PVT_State( int state , double close , double volume ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def PVT_BatchState( int state , np.ndarray close not None , np.ndarray volume not None ):
+def PVT_BatchState( size_t state , np.ndarray close not None , np.ndarray volume not None ):
     """ PVT_BatchState(close, volume)"""
     cdef:
         void * _state;
@@ -14112,7 +14112,7 @@ def PVT_BatchState( int state , np.ndarray close not None , np.ndarray volume no
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def PVT_StateFree( int state ):
+def PVT_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -14123,7 +14123,7 @@ def PVT_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def PVT_StateSave( int state , int hFile ):
+def PVT_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -14141,7 +14141,7 @@ def PVT_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_PVT_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_PVT_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -14173,12 +14173,12 @@ def ROC_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_ROC_StateInit(& _state, timeperiod)
     _ta_check_success("TA_ROC_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ROC_State( int state , double real ):
+def ROC_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -14190,7 +14190,7 @@ def ROC_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ROC_BatchState( int state , np.ndarray real not None ):
+def ROC_BatchState( size_t state , np.ndarray real not None ):
     """ ROC_BatchState(real)"""
     cdef:
         void * _state;
@@ -14213,7 +14213,7 @@ def ROC_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ROC_StateFree( int state ):
+def ROC_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -14224,7 +14224,7 @@ def ROC_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ROC_StateSave( int state , int hFile ):
+def ROC_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -14242,7 +14242,7 @@ def ROC_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_ROC_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_ROC_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -14274,12 +14274,12 @@ def ROCP_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_ROCP_StateInit(& _state, timeperiod)
     _ta_check_success("TA_ROCP_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ROCP_State( int state , double real ):
+def ROCP_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -14291,7 +14291,7 @@ def ROCP_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ROCP_BatchState( int state , np.ndarray real not None ):
+def ROCP_BatchState( size_t state , np.ndarray real not None ):
     """ ROCP_BatchState(real)"""
     cdef:
         void * _state;
@@ -14314,7 +14314,7 @@ def ROCP_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ROCP_StateFree( int state ):
+def ROCP_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -14325,7 +14325,7 @@ def ROCP_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ROCP_StateSave( int state , int hFile ):
+def ROCP_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -14343,7 +14343,7 @@ def ROCP_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_ROCP_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_ROCP_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -14375,12 +14375,12 @@ def ROCR_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_ROCR_StateInit(& _state, timeperiod)
     _ta_check_success("TA_ROCR_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ROCR_State( int state , double real ):
+def ROCR_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -14392,7 +14392,7 @@ def ROCR_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ROCR_BatchState( int state , np.ndarray real not None ):
+def ROCR_BatchState( size_t state , np.ndarray real not None ):
     """ ROCR_BatchState(real)"""
     cdef:
         void * _state;
@@ -14415,7 +14415,7 @@ def ROCR_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ROCR_StateFree( int state ):
+def ROCR_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -14426,7 +14426,7 @@ def ROCR_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ROCR_StateSave( int state , int hFile ):
+def ROCR_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -14444,7 +14444,7 @@ def ROCR_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_ROCR_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_ROCR_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -14476,12 +14476,12 @@ def ROCR100_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_ROCR100_StateInit(& _state, timeperiod)
     _ta_check_success("TA_ROCR100_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ROCR100_State( int state , double real ):
+def ROCR100_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -14493,7 +14493,7 @@ def ROCR100_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ROCR100_BatchState( int state , np.ndarray real not None ):
+def ROCR100_BatchState( size_t state , np.ndarray real not None ):
     """ ROCR100_BatchState(real)"""
     cdef:
         void * _state;
@@ -14516,7 +14516,7 @@ def ROCR100_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ROCR100_StateFree( int state ):
+def ROCR100_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -14527,7 +14527,7 @@ def ROCR100_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ROCR100_StateSave( int state , int hFile ):
+def ROCR100_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -14545,7 +14545,7 @@ def ROCR100_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_ROCR100_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_ROCR100_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -14577,12 +14577,12 @@ def RSI_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_RSI_StateInit(& _state, timeperiod)
     _ta_check_success("TA_RSI_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def RSI_State( int state , double real ):
+def RSI_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -14594,7 +14594,7 @@ def RSI_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def RSI_BatchState( int state , np.ndarray real not None ):
+def RSI_BatchState( size_t state , np.ndarray real not None ):
     """ RSI_BatchState(real)"""
     cdef:
         void * _state;
@@ -14617,7 +14617,7 @@ def RSI_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def RSI_StateFree( int state ):
+def RSI_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -14628,7 +14628,7 @@ def RSI_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def RSI_StateSave( int state , int hFile ):
+def RSI_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -14646,7 +14646,7 @@ def RSI_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_RSI_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_RSI_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -14679,12 +14679,12 @@ def SAR_StateInit( double acceleration=-4e37 , double maximum=-4e37 ):
         TA_RetCode retCode
     retCode = lib.TA_SAR_StateInit(& _state, acceleration, maximum)
     _ta_check_success("TA_SAR_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SAR_State( int state , double high , double low ):
+def SAR_State( size_t state , double high , double low ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -14696,7 +14696,7 @@ def SAR_State( int state , double high , double low ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SAR_BatchState( int state , np.ndarray high not None , np.ndarray low not None ):
+def SAR_BatchState( size_t state , np.ndarray high not None , np.ndarray low not None ):
     """ SAR_BatchState(high, low)"""
     cdef:
         void * _state;
@@ -14720,7 +14720,7 @@ def SAR_BatchState( int state , np.ndarray high not None , np.ndarray low not No
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SAR_StateFree( int state ):
+def SAR_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -14731,7 +14731,7 @@ def SAR_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SAR_StateSave( int state , int hFile ):
+def SAR_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -14749,7 +14749,7 @@ def SAR_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_SAR_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_SAR_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -14782,12 +14782,12 @@ def SAREXT_StateInit( double startvalue=-4e37 , double offsetonreverse=-4e37 , d
         TA_RetCode retCode
     retCode = lib.TA_SAREXT_StateInit(& _state, startvalue, offsetonreverse, accelerationinitlong, accelerationlong, accelerationmaxlong, accelerationinitshort, accelerationshort, accelerationmaxshort)
     _ta_check_success("TA_SAREXT_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SAREXT_State( int state , double high , double low ):
+def SAREXT_State( size_t state , double high , double low ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -14799,7 +14799,7 @@ def SAREXT_State( int state , double high , double low ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SAREXT_BatchState( int state , np.ndarray high not None , np.ndarray low not None ):
+def SAREXT_BatchState( size_t state , np.ndarray high not None , np.ndarray low not None ):
     """ SAREXT_BatchState(high, low)"""
     cdef:
         void * _state;
@@ -14823,7 +14823,7 @@ def SAREXT_BatchState( int state , np.ndarray high not None , np.ndarray low not
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SAREXT_StateFree( int state ):
+def SAREXT_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -14834,7 +14834,7 @@ def SAREXT_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SAREXT_StateSave( int state , int hFile ):
+def SAREXT_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -14852,7 +14852,7 @@ def SAREXT_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_SAREXT_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_SAREXT_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -14884,12 +14884,12 @@ def SIN_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_SIN_StateInit(& _state)
     _ta_check_success("TA_SIN_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SIN_State( int state , double real ):
+def SIN_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -14901,7 +14901,7 @@ def SIN_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SIN_BatchState( int state , np.ndarray real not None ):
+def SIN_BatchState( size_t state , np.ndarray real not None ):
     """ SIN_BatchState(real)"""
     cdef:
         void * _state;
@@ -14924,7 +14924,7 @@ def SIN_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SIN_StateFree( int state ):
+def SIN_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -14935,7 +14935,7 @@ def SIN_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SIN_StateSave( int state , int hFile ):
+def SIN_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -14953,7 +14953,7 @@ def SIN_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_SIN_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_SIN_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -14985,12 +14985,12 @@ def SINH_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_SINH_StateInit(& _state)
     _ta_check_success("TA_SINH_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SINH_State( int state , double real ):
+def SINH_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -15002,7 +15002,7 @@ def SINH_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SINH_BatchState( int state , np.ndarray real not None ):
+def SINH_BatchState( size_t state , np.ndarray real not None ):
     """ SINH_BatchState(real)"""
     cdef:
         void * _state;
@@ -15025,7 +15025,7 @@ def SINH_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SINH_StateFree( int state ):
+def SINH_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -15036,7 +15036,7 @@ def SINH_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SINH_StateSave( int state , int hFile ):
+def SINH_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -15054,7 +15054,7 @@ def SINH_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_SINH_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_SINH_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -15086,12 +15086,12 @@ def SMA_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_SMA_StateInit(& _state, timeperiod)
     _ta_check_success("TA_SMA_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SMA_State( int state , double real ):
+def SMA_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -15103,7 +15103,7 @@ def SMA_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SMA_BatchState( int state , np.ndarray real not None ):
+def SMA_BatchState( size_t state , np.ndarray real not None ):
     """ SMA_BatchState(real)"""
     cdef:
         void * _state;
@@ -15126,7 +15126,7 @@ def SMA_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SMA_StateFree( int state ):
+def SMA_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -15137,7 +15137,7 @@ def SMA_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SMA_StateSave( int state , int hFile ):
+def SMA_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -15155,7 +15155,7 @@ def SMA_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_SMA_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_SMA_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -15187,12 +15187,12 @@ def SQRT_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_SQRT_StateInit(& _state)
     _ta_check_success("TA_SQRT_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SQRT_State( int state , double real ):
+def SQRT_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -15204,7 +15204,7 @@ def SQRT_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SQRT_BatchState( int state , np.ndarray real not None ):
+def SQRT_BatchState( size_t state , np.ndarray real not None ):
     """ SQRT_BatchState(real)"""
     cdef:
         void * _state;
@@ -15227,7 +15227,7 @@ def SQRT_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SQRT_StateFree( int state ):
+def SQRT_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -15238,7 +15238,7 @@ def SQRT_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SQRT_StateSave( int state , int hFile ):
+def SQRT_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -15256,7 +15256,7 @@ def SQRT_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_SQRT_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_SQRT_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -15288,12 +15288,12 @@ def STDDEV_StateInit( int timeperiod=-2**31 , double nbdev=-4e37 ):
         TA_RetCode retCode
     retCode = lib.TA_STDDEV_StateInit(& _state, timeperiod, nbdev)
     _ta_check_success("TA_STDDEV_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def STDDEV_State( int state , double real ):
+def STDDEV_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -15305,7 +15305,7 @@ def STDDEV_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def STDDEV_BatchState( int state , np.ndarray real not None ):
+def STDDEV_BatchState( size_t state , np.ndarray real not None ):
     """ STDDEV_BatchState(real)"""
     cdef:
         void * _state;
@@ -15328,7 +15328,7 @@ def STDDEV_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def STDDEV_StateFree( int state ):
+def STDDEV_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -15339,7 +15339,7 @@ def STDDEV_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def STDDEV_StateSave( int state , int hFile ):
+def STDDEV_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -15357,7 +15357,7 @@ def STDDEV_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_STDDEV_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_STDDEV_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -15393,12 +15393,12 @@ def STOCH_StateInit( int fastk_period=-2**31 , int slowk_period=-2**31 , int slo
         TA_RetCode retCode
     retCode = lib.TA_STOCH_StateInit(& _state, fastk_period, slowk_period, slowk_matype, slowd_period, slowd_matype)
     _ta_check_success("TA_STOCH_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def STOCH_State( int state , double high , double low , double close ):
+def STOCH_State( size_t state , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -15411,7 +15411,7 @@ def STOCH_State( int state , double high , double low , double close ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def STOCH_BatchState( int state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def STOCH_BatchState( size_t state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ STOCH_BatchState(high, low, close)"""
     cdef:
         void * _state;
@@ -15438,7 +15438,7 @@ def STOCH_BatchState( int state , np.ndarray high not None , np.ndarray low not 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def STOCH_StateFree( int state ):
+def STOCH_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -15449,7 +15449,7 @@ def STOCH_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def STOCH_StateSave( int state , int hFile ):
+def STOCH_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -15467,7 +15467,7 @@ def STOCH_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_STOCH_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_STOCH_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -15503,12 +15503,12 @@ def STOCHF_StateInit( int fastk_period=-2**31 , int fastd_period=-2**31 , int fa
         TA_RetCode retCode
     retCode = lib.TA_STOCHF_StateInit(& _state, fastk_period, fastd_period, fastd_matype)
     _ta_check_success("TA_STOCHF_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def STOCHF_State( int state , double high , double low , double close ):
+def STOCHF_State( size_t state , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -15521,7 +15521,7 @@ def STOCHF_State( int state , double high , double low , double close ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def STOCHF_BatchState( int state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def STOCHF_BatchState( size_t state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ STOCHF_BatchState(high, low, close)"""
     cdef:
         void * _state;
@@ -15548,7 +15548,7 @@ def STOCHF_BatchState( int state , np.ndarray high not None , np.ndarray low not
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def STOCHF_StateFree( int state ):
+def STOCHF_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -15559,7 +15559,7 @@ def STOCHF_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def STOCHF_StateSave( int state , int hFile ):
+def STOCHF_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -15577,7 +15577,7 @@ def STOCHF_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_STOCHF_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_STOCHF_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -15611,12 +15611,12 @@ def STOCHRSI_StateInit( int timeperiod=-2**31 , int fastk_period=-2**31 , int fa
         TA_RetCode retCode
     retCode = lib.TA_STOCHRSI_StateInit(& _state, timeperiod, fastk_period, fastd_period, fastd_matype)
     _ta_check_success("TA_STOCHRSI_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def STOCHRSI_State( int state , double real ):
+def STOCHRSI_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -15629,7 +15629,7 @@ def STOCHRSI_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def STOCHRSI_BatchState( int state , np.ndarray real not None ):
+def STOCHRSI_BatchState( size_t state , np.ndarray real not None ):
     """ STOCHRSI_BatchState(real)"""
     cdef:
         void * _state;
@@ -15654,7 +15654,7 @@ def STOCHRSI_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def STOCHRSI_StateFree( int state ):
+def STOCHRSI_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -15665,7 +15665,7 @@ def STOCHRSI_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def STOCHRSI_StateSave( int state , int hFile ):
+def STOCHRSI_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -15683,7 +15683,7 @@ def STOCHRSI_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_STOCHRSI_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_STOCHRSI_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -15716,12 +15716,12 @@ def SUB_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_SUB_StateInit(& _state)
     _ta_check_success("TA_SUB_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SUB_State( int state , double real0 , double real1 ):
+def SUB_State( size_t state , double real0 , double real1 ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -15733,7 +15733,7 @@ def SUB_State( int state , double real0 , double real1 ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SUB_BatchState( int state , np.ndarray real0 not None , np.ndarray real1 not None ):
+def SUB_BatchState( size_t state , np.ndarray real0 not None , np.ndarray real1 not None ):
     """ SUB_BatchState(real0, real1)"""
     cdef:
         void * _state;
@@ -15757,7 +15757,7 @@ def SUB_BatchState( int state , np.ndarray real0 not None , np.ndarray real1 not
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SUB_StateFree( int state ):
+def SUB_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -15768,7 +15768,7 @@ def SUB_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SUB_StateSave( int state , int hFile ):
+def SUB_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -15786,7 +15786,7 @@ def SUB_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_SUB_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_SUB_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -15818,12 +15818,12 @@ def SUM_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_SUM_StateInit(& _state, timeperiod)
     _ta_check_success("TA_SUM_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SUM_State( int state , double real ):
+def SUM_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -15835,7 +15835,7 @@ def SUM_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SUM_BatchState( int state , np.ndarray real not None ):
+def SUM_BatchState( size_t state , np.ndarray real not None ):
     """ SUM_BatchState(real)"""
     cdef:
         void * _state;
@@ -15858,7 +15858,7 @@ def SUM_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SUM_StateFree( int state ):
+def SUM_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -15869,7 +15869,7 @@ def SUM_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def SUM_StateSave( int state , int hFile ):
+def SUM_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -15887,7 +15887,7 @@ def SUM_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_SUM_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_SUM_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -15919,12 +15919,12 @@ def T3_StateInit( int timeperiod=-2**31 , double vfactor=-4e37 ):
         TA_RetCode retCode
     retCode = lib.TA_T3_StateInit(& _state, timeperiod, vfactor)
     _ta_check_success("TA_T3_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def T3_State( int state , double real ):
+def T3_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -15936,7 +15936,7 @@ def T3_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def T3_BatchState( int state , np.ndarray real not None ):
+def T3_BatchState( size_t state , np.ndarray real not None ):
     """ T3_BatchState(real)"""
     cdef:
         void * _state;
@@ -15959,7 +15959,7 @@ def T3_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def T3_StateFree( int state ):
+def T3_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -15970,7 +15970,7 @@ def T3_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def T3_StateSave( int state , int hFile ):
+def T3_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -15988,7 +15988,7 @@ def T3_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_T3_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_T3_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -16020,12 +16020,12 @@ def TAN_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_TAN_StateInit(& _state)
     _ta_check_success("TA_TAN_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TAN_State( int state , double real ):
+def TAN_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -16037,7 +16037,7 @@ def TAN_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TAN_BatchState( int state , np.ndarray real not None ):
+def TAN_BatchState( size_t state , np.ndarray real not None ):
     """ TAN_BatchState(real)"""
     cdef:
         void * _state;
@@ -16060,7 +16060,7 @@ def TAN_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TAN_StateFree( int state ):
+def TAN_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -16071,7 +16071,7 @@ def TAN_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TAN_StateSave( int state , int hFile ):
+def TAN_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -16089,7 +16089,7 @@ def TAN_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_TAN_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_TAN_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -16121,12 +16121,12 @@ def TANH_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_TANH_StateInit(& _state)
     _ta_check_success("TA_TANH_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TANH_State( int state , double real ):
+def TANH_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -16138,7 +16138,7 @@ def TANH_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TANH_BatchState( int state , np.ndarray real not None ):
+def TANH_BatchState( size_t state , np.ndarray real not None ):
     """ TANH_BatchState(real)"""
     cdef:
         void * _state;
@@ -16161,7 +16161,7 @@ def TANH_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TANH_StateFree( int state ):
+def TANH_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -16172,7 +16172,7 @@ def TANH_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TANH_StateSave( int state , int hFile ):
+def TANH_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -16190,7 +16190,7 @@ def TANH_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_TANH_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_TANH_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -16222,12 +16222,12 @@ def TEMA_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_TEMA_StateInit(& _state, timeperiod)
     _ta_check_success("TA_TEMA_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TEMA_State( int state , double real ):
+def TEMA_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -16239,7 +16239,7 @@ def TEMA_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TEMA_BatchState( int state , np.ndarray real not None ):
+def TEMA_BatchState( size_t state , np.ndarray real not None ):
     """ TEMA_BatchState(real)"""
     cdef:
         void * _state;
@@ -16262,7 +16262,7 @@ def TEMA_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TEMA_StateFree( int state ):
+def TEMA_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -16273,7 +16273,7 @@ def TEMA_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TEMA_StateSave( int state , int hFile ):
+def TEMA_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -16291,7 +16291,7 @@ def TEMA_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_TEMA_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_TEMA_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -16325,12 +16325,12 @@ def TRANGE_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_TRANGE_StateInit(& _state)
     _ta_check_success("TA_TRANGE_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TRANGE_State( int state , double high , double low , double close ):
+def TRANGE_State( size_t state , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -16342,7 +16342,7 @@ def TRANGE_State( int state , double high , double low , double close ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TRANGE_BatchState( int state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def TRANGE_BatchState( size_t state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ TRANGE_BatchState(high, low, close)"""
     cdef:
         void * _state;
@@ -16367,7 +16367,7 @@ def TRANGE_BatchState( int state , np.ndarray high not None , np.ndarray low not
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TRANGE_StateFree( int state ):
+def TRANGE_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -16378,7 +16378,7 @@ def TRANGE_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TRANGE_StateSave( int state , int hFile ):
+def TRANGE_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -16396,7 +16396,7 @@ def TRANGE_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_TRANGE_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_TRANGE_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -16428,12 +16428,12 @@ def TRIMA_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_TRIMA_StateInit(& _state, timeperiod)
     _ta_check_success("TA_TRIMA_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TRIMA_State( int state , double real ):
+def TRIMA_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -16445,7 +16445,7 @@ def TRIMA_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TRIMA_BatchState( int state , np.ndarray real not None ):
+def TRIMA_BatchState( size_t state , np.ndarray real not None ):
     """ TRIMA_BatchState(real)"""
     cdef:
         void * _state;
@@ -16468,7 +16468,7 @@ def TRIMA_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TRIMA_StateFree( int state ):
+def TRIMA_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -16479,7 +16479,7 @@ def TRIMA_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TRIMA_StateSave( int state , int hFile ):
+def TRIMA_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -16497,7 +16497,7 @@ def TRIMA_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_TRIMA_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_TRIMA_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -16529,12 +16529,12 @@ def TRIX_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_TRIX_StateInit(& _state, timeperiod)
     _ta_check_success("TA_TRIX_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TRIX_State( int state , double real ):
+def TRIX_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -16546,7 +16546,7 @@ def TRIX_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TRIX_BatchState( int state , np.ndarray real not None ):
+def TRIX_BatchState( size_t state , np.ndarray real not None ):
     """ TRIX_BatchState(real)"""
     cdef:
         void * _state;
@@ -16569,7 +16569,7 @@ def TRIX_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TRIX_StateFree( int state ):
+def TRIX_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -16580,7 +16580,7 @@ def TRIX_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TRIX_StateSave( int state , int hFile ):
+def TRIX_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -16598,7 +16598,7 @@ def TRIX_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_TRIX_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_TRIX_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -16630,12 +16630,12 @@ def TSF_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_TSF_StateInit(& _state, timeperiod)
     _ta_check_success("TA_TSF_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TSF_State( int state , double real ):
+def TSF_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -16647,7 +16647,7 @@ def TSF_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TSF_BatchState( int state , np.ndarray real not None ):
+def TSF_BatchState( size_t state , np.ndarray real not None ):
     """ TSF_BatchState(real)"""
     cdef:
         void * _state;
@@ -16670,7 +16670,7 @@ def TSF_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TSF_StateFree( int state ):
+def TSF_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -16681,7 +16681,7 @@ def TSF_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TSF_StateSave( int state , int hFile ):
+def TSF_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -16699,7 +16699,7 @@ def TSF_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_TSF_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_TSF_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -16733,12 +16733,12 @@ def TYPPRICE_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_TYPPRICE_StateInit(& _state)
     _ta_check_success("TA_TYPPRICE_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TYPPRICE_State( int state , double high , double low , double close ):
+def TYPPRICE_State( size_t state , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -16750,7 +16750,7 @@ def TYPPRICE_State( int state , double high , double low , double close ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TYPPRICE_BatchState( int state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def TYPPRICE_BatchState( size_t state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ TYPPRICE_BatchState(high, low, close)"""
     cdef:
         void * _state;
@@ -16775,7 +16775,7 @@ def TYPPRICE_BatchState( int state , np.ndarray high not None , np.ndarray low n
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TYPPRICE_StateFree( int state ):
+def TYPPRICE_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -16786,7 +16786,7 @@ def TYPPRICE_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def TYPPRICE_StateSave( int state , int hFile ):
+def TYPPRICE_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -16804,7 +16804,7 @@ def TYPPRICE_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_TYPPRICE_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_TYPPRICE_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -16838,12 +16838,12 @@ def ULTOSC_StateInit( int timeperiod1=-2**31 , int timeperiod2=-2**31 , int time
         TA_RetCode retCode
     retCode = lib.TA_ULTOSC_StateInit(& _state, timeperiod1, timeperiod2, timeperiod3)
     _ta_check_success("TA_ULTOSC_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ULTOSC_State( int state , double high , double low , double close ):
+def ULTOSC_State( size_t state , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -16855,7 +16855,7 @@ def ULTOSC_State( int state , double high , double low , double close ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ULTOSC_BatchState( int state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def ULTOSC_BatchState( size_t state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ ULTOSC_BatchState(high, low, close)"""
     cdef:
         void * _state;
@@ -16880,7 +16880,7 @@ def ULTOSC_BatchState( int state , np.ndarray high not None , np.ndarray low not
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ULTOSC_StateFree( int state ):
+def ULTOSC_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -16891,7 +16891,7 @@ def ULTOSC_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def ULTOSC_StateSave( int state , int hFile ):
+def ULTOSC_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -16909,7 +16909,7 @@ def ULTOSC_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_ULTOSC_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_ULTOSC_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -16941,12 +16941,12 @@ def VAR_StateInit( int timeperiod=-2**31 , double nbdev=-4e37 ):
         TA_RetCode retCode
     retCode = lib.TA_VAR_StateInit(& _state, timeperiod, nbdev)
     _ta_check_success("TA_VAR_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def VAR_State( int state , double real ):
+def VAR_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -16958,7 +16958,7 @@ def VAR_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def VAR_BatchState( int state , np.ndarray real not None ):
+def VAR_BatchState( size_t state , np.ndarray real not None ):
     """ VAR_BatchState(real)"""
     cdef:
         void * _state;
@@ -16981,7 +16981,7 @@ def VAR_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def VAR_StateFree( int state ):
+def VAR_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -16992,7 +16992,7 @@ def VAR_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def VAR_StateSave( int state , int hFile ):
+def VAR_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -17010,7 +17010,7 @@ def VAR_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_VAR_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_VAR_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -17044,12 +17044,12 @@ def WCLPRICE_StateInit( ):
         TA_RetCode retCode
     retCode = lib.TA_WCLPRICE_StateInit(& _state)
     _ta_check_success("TA_WCLPRICE_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def WCLPRICE_State( int state , double high , double low , double close ):
+def WCLPRICE_State( size_t state , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -17061,7 +17061,7 @@ def WCLPRICE_State( int state , double high , double low , double close ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def WCLPRICE_BatchState( int state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def WCLPRICE_BatchState( size_t state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ WCLPRICE_BatchState(high, low, close)"""
     cdef:
         void * _state;
@@ -17086,7 +17086,7 @@ def WCLPRICE_BatchState( int state , np.ndarray high not None , np.ndarray low n
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def WCLPRICE_StateFree( int state ):
+def WCLPRICE_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -17097,7 +17097,7 @@ def WCLPRICE_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def WCLPRICE_StateSave( int state , int hFile ):
+def WCLPRICE_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -17115,7 +17115,7 @@ def WCLPRICE_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_WCLPRICE_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_WCLPRICE_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -17149,12 +17149,12 @@ def WILLR_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_WILLR_StateInit(& _state, timeperiod)
     _ta_check_success("TA_WILLR_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def WILLR_State( int state , double high , double low , double close ):
+def WILLR_State( size_t state , double high , double low , double close ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -17166,7 +17166,7 @@ def WILLR_State( int state , double high , double low , double close ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def WILLR_BatchState( int state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
+def WILLR_BatchState( size_t state , np.ndarray high not None , np.ndarray low not None , np.ndarray close not None ):
     """ WILLR_BatchState(high, low, close)"""
     cdef:
         void * _state;
@@ -17191,7 +17191,7 @@ def WILLR_BatchState( int state , np.ndarray high not None , np.ndarray low not 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def WILLR_StateFree( int state ):
+def WILLR_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -17202,7 +17202,7 @@ def WILLR_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def WILLR_StateSave( int state , int hFile ):
+def WILLR_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -17220,7 +17220,7 @@ def WILLR_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_WILLR_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_WILLR_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
@@ -17252,12 +17252,12 @@ def WMA_StateInit( int timeperiod=-2**31 ):
         TA_RetCode retCode
     retCode = lib.TA_WMA_StateInit(& _state, timeperiod)
     _ta_check_success("TA_WMA_StateInit", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def WMA_State( int state , double real ):
+def WMA_State( size_t state , double real ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -17269,7 +17269,7 @@ def WMA_State( int state , double real ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def WMA_BatchState( int state , np.ndarray real not None ):
+def WMA_BatchState( size_t state , np.ndarray real not None ):
     """ WMA_BatchState(real)"""
     cdef:
         void * _state;
@@ -17292,7 +17292,7 @@ def WMA_BatchState( int state , np.ndarray real not None ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def WMA_StateFree( int state ):
+def WMA_StateFree( size_t state ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -17303,7 +17303,7 @@ def WMA_StateFree( int state ):
 
 @wraparound(False)  # turn off relative indexing from end of lists
 @boundscheck(False) # turn off bounds-checking for entire function
-def WMA_StateSave( int state , int hFile ):
+def WMA_StateSave( size_t state , int hFile ):
     cdef:
         void * _state;
         TA_RetCode retCode
@@ -17321,7 +17321,7 @@ def WMA_StateLoad( int hFile ):
         TA_RetCode retCode
     retCode = lib.TA_WMA_StateLoad(&_state, <FILE *>hFile)
     _ta_check_success("TA_WMA_StateLoad", retCode)
-    return TALibResult(retCode), <int>_state
+    return TALibResult(retCode), <size_t>_state
 
 
 __TA_FUNCTION_NAMES__ = ["ACCBANDS","ACOS","AD","ADD","ADOSC","ADX","ADXR","APO","AROON","AROONOSC","ASIN","ATAN","ATR","AVGPRICE","AVGDEV","BBANDS","BETA","BOP","CCI","CDL2CROWS","CDL3BLACKCROWS","CDL3INSIDE","CDL3LINESTRIKE","CDL3OUTSIDE","CDL3STARSINSOUTH","CDL3WHITESOLDIERS","CDLABANDONEDBABY","CDLADVANCEBLOCK","CDLBELTHOLD","CDLBREAKAWAY","CDLCLOSINGMARUBOZU","CDLCONCEALBABYSWALL","CDLCOUNTERATTACK","CDLDARKCLOUDCOVER","CDLDOJI","CDLDOJISTAR","CDLDRAGONFLYDOJI","CDLENGULFING","CDLEVENINGDOJISTAR","CDLEVENINGSTAR","CDLGAPSIDESIDEWHITE","CDLGRAVESTONEDOJI","CDLHAMMER","CDLHANGINGMAN","CDLHARAMI","CDLHARAMICROSS","CDLHIGHWAVE","CDLHIKKAKE","CDLHIKKAKEMOD","CDLHOMINGPIGEON","CDLIDENTICAL3CROWS","CDLINNECK","CDLINVERTEDHAMMER","CDLKICKING","CDLKICKINGBYLENGTH","CDLLADDERBOTTOM","CDLLONGLEGGEDDOJI","CDLLONGLINE","CDLMARUBOZU","CDLMATCHINGLOW","CDLMATHOLD","CDLMORNINGDOJISTAR","CDLMORNINGSTAR","CDLONNECK","CDLPIERCING","CDLRICKSHAWMAN","CDLRISEFALL3METHODS","CDLSEPARATINGLINES","CDLSHOOTINGSTAR","CDLSHORTLINE","CDLSPINNINGTOP","CDLSTALLEDPATTERN","CDLSTICKSANDWICH","CDLTAKURI","CDLTASUKIGAP","CDLTHRUSTING","CDLTRISTAR","CDLUNIQUE3RIVER","CDLUPSIDEGAP2CROWS","CDLXSIDEGAP3METHODS","CEIL","CMO","CORREL","COS","COSH","DEMA","DIV","DX","EMA","EXP","FLOOR","HT_DCPERIOD","HT_DCPHASE","HT_PHASOR","HT_SINE","HT_TRENDLINE","HT_TRENDMODE","IMI","KAMA","LINEARREG","LINEARREG_ANGLE","LINEARREG_INTERCEPT","LINEARREG_SLOPE","LN","LOG10","MA","MACD","MACDEXT","MACDFIX","MAMA","MAVP","MAX","MAXINDEX","MEDPRICE","MFI","MIDPOINT","MIDPRICE","MIN","MININDEX","MINMAX","MINMAXINDEX","MINUS_DI","MINUS_DM","MOM","MULT","NATR","NVI","OBV","PLUS_DI","PLUS_DM","PPO","PVI","PVT","ROC","ROCP","ROCR","ROCR100","RSI","SAR","SAREXT","SIN","SINH","SMA","SQRT","STDDEV","STOCH","STOCHF","STOCHRSI","SUB","SUM","T3","TAN","TANH","TEMA","TRANGE","TRIMA","TRIX","TSF","TYPPRICE","ULTOSC","VAR","WCLPRICE","WILLR","WMA"]
