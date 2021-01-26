@@ -82,7 +82,7 @@ for func_name in __TA_FUNCTION_NAMES__:
     setattr(func, func_name, wrapped_func)
     globals()[func_name + "_BatchState"] = wrapped_func
 
-__version__ = '0.7.0alpha'
+__version__ = '0.8.1-alpha'
 
 # In order to use this python library, talibrt (i.e. this __file__) will be
 # imported at some point, either explicitly or indirectly via talibrt.func
