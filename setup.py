@@ -10,10 +10,10 @@ display_option_names = Distribution.display_option_names + ['help', 'help-comman
 query_only = any('--' + opt in sys.argv for opt in display_option_names) or len(sys.argv) < 2 or sys.argv[1] == 'egg_info'
 
 try:
-    from setuptools import setup, Extension
+    from setuptools import setup, Extension, find_packages
     requires = {"install_requires": ["numpy"]}
 except:
-    from distutils.core import setup
+    from distutils.core import setup, find_packages
     from distutils.extension import Extension
     requires = {"requires": ["numpy"]}
 
@@ -49,10 +49,11 @@ for prefix in ['darwin', 'linux', 'bsd', 'sunos']:
         break
 
 if sys.platform == "win32":
+    here = os.path.abspath(os.path.dirname(__file__))
     platform_supported = True
-    lib_talib_name = 'ta-libc-cdr'
-    include_dirs = [r"c:\ta-lib-rt\c\include"]
-    lib_talib_dirs = [r"c:\ta-lib-rt\c\lib"]
+    lib_talib_name = 'libta-lib-rt'
+    include_dirs = [here+"/ta-lib-rt/c/include"]
+    lib_talib_dirs = [here+"/ta-lib-rt/c/lib"]
 
 if not platform_supported:
     raise NotImplementedError(sys.platform)
@@ -93,6 +94,24 @@ ext_modules = [
     )
 ]
 
+
+header_found = False
+for path in include_dirs:
+    ta_func_header = os.path.join(path, 'ta-lib-rt', 'ta_func.h')
+    if os.path.exists(ta_func_header):
+        header_found = True
+        break
+    ta_func_header = os.path.join(path, 'ta-lib', 'ta_func.h')
+    if os.path.exists(ta_func_header):
+        header_found = True
+        break
+if header_found:
+    print('(ta-lib/ta_func.h or ta-lib-rt/ta_func.h) found', file=sys.stdout)
+    from tools.gencode import gencode
+    gencode(ta_func_header)
+else:
+    print('Error: (ta-lib/ta_func.h or ta-lib-rt/ta_func.h) not found wont generate helper wrapper code', file=sys.stderr)
+
 setup(
     name = 'TA-Lib-RT',
     version = '0.8.1-alpha',
@@ -122,7 +141,7 @@ setup(
         "Intended Audience :: Science/Research",
         "Intended Audience :: Financial and Insurance Industry",
     ],
-    packages = ['talibrt'],
+    packages = find_packages(),
     ext_modules = ext_modules,
     cmdclass = cmdclass,
     **requires
